@@ -12,6 +12,11 @@ public class UI_Inventory : MonoBehaviour
     private void Awake()
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
+        if (itemSlotContainer == null)
+        {
+            Debug.LogError("itemSlotContainer not found! Please ensure it's in the hierarchy.");
+            return; // Exit early to prevent further errors
+        }
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
     }
 
