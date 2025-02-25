@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 671222367}
   - component: {fileID: 671222366}
   m_Layer: 0
-  m_Name: SailorWalkSet_7
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,6 +709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683193604}
+  - component: {fileID: 1683193605}
   m_Layer: 0
   m_Name: ItemAssets
   m_TagString: Untagged
@@ -724,13 +725,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683193603}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 133.89815, y: 626.0242, z: -5.100082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1683193605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683193603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d273f24bfb6a14f96036e7c22ff251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DocsSprite: {fileID: -1203886472, guid: 9e0c89bf35108ef4bbe96a6ee2170a1b, type: 3}
+  CompassSprite: {fileID: 21300000, guid: 848916b179bcb6a419cfe2cba6484375, type: 3}
 --- !u!1 &1725664871
 GameObject:
   m_ObjectHideFlags: 0
