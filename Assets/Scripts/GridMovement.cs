@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
+    [SerializeField] private UI_Inventory UI_Inventory;
     public float movementSpeed = 5f;
     public Transform movePoint;
-    
+    private Inventory inventory;
     
 
     public LayerMask whatStopsMovement;
@@ -14,7 +15,9 @@ public class GridMovement : MonoBehaviour
     void Start()
     {
         movePoint.parent = null;
-        
+        inventory = new Inventory();
+
+        UI_Inventory.SetInventory(inventory);
     }
 
     // Update is called once per frame
