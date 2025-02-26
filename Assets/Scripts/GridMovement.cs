@@ -8,6 +8,8 @@ public class GridMovement : MonoBehaviour
     public float movementSpeed = 5f;
     public Transform movePoint;
     private Inventory inventory;
+    // private bool playingFootsteps = false;
+    // public float footstepSpeed = 0.5f;
     
 
     public LayerMask whatStopsMovement;
