@@ -8,6 +8,11 @@ public class GridMovement : MonoBehaviour
     public float movementSpeed = 5f;
     public Transform movePoint;
     private Inventory inventory;
+
+    //Animation - K
+    private Animator animator;
+
+    //SFX - K
     // private bool playingFootsteps = false;
     // public float footstepSpeed = 0.5f;
     
@@ -16,15 +21,22 @@ public class GridMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Movement
         movePoint.parent = null;
         inventory = new Inventory();
 
+        //Inventory
         UI_Inventory.SetInventory(inventory);
+
+        //Animation - K
+        animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Movement
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
@@ -45,8 +57,16 @@ public class GridMovement : MonoBehaviour
             }
         }
     }
-    
-    
+
+    //Animation - K
+   /* public void Move(InputAction.CallbackContext context)
+    {
+      animator.SetBool("isWalking", true);
+
+        moveInput = context.ReadValue<Vector2>();
+    }
+   */
+
 
 
 
