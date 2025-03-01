@@ -13,19 +13,17 @@ public class Item
 
     public Sprite GetSprite()
     {
-
+        if (ItemAssets.Instance == null)
+        {
+            Debug.LogError("ItemAssets Instance is null! Make sure it exists in the scene.");
+            return null;
+        }
 
         switch (itemType)
         {
             default:
             case ItemType.Compass: return ItemAssets.Instance.CompassSprite;
             case ItemType.Docs: return ItemAssets.Instance.DocsSprite;
-
         }
-
-        
-
-        }
-
     }
-
+}
