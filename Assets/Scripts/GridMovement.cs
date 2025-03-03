@@ -12,7 +12,7 @@ public class GridMovement : MonoBehaviour
 
     private void Awake()
     {
-        inventory = new Inventory(); // Ensure inventory is created before UI setup
+        inventory = new Inventory(); 
     }
 
     void Start()
@@ -31,7 +31,7 @@ public class GridMovement : MonoBehaviour
             return;
         }
 
-        UI_Inventory.SetInventory(inventory); // Now inventory should not be null
+        UI_Inventory.SetInventory(inventory); 
     }
 
 
@@ -77,7 +77,7 @@ public class GridMovement : MonoBehaviour
             Debug.Log("- " + item.itemType);
         }
 
-        UI_Inventory.SetInventory(inventory); // Refresh UI
+        UI_Inventory.SetInventory(inventory); 
     }
 
 }

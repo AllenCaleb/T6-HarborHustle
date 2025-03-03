@@ -36,13 +36,11 @@ public class UI_Inventory : MonoBehaviour
         this.inventory = inventory;
         RefreshInventoryItems();
     }
-
-
     private void RefreshInventoryItems()
     {
         Debug.Log("Refreshing inventory UI... Total Items: " + inventory.GetItems().Count);
 
-        // Clear old items
+        
         foreach (Transform child in itemSlotContainer)
         {
             if (child == itemSlotTemplate) continue;
