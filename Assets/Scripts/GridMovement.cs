@@ -8,16 +8,20 @@ public class GridMovement : MonoBehaviour
     public float movementSpeed = 5f;
     public Transform movePoint;
     private Inventory inventory;
+
+main
     public LayerMask whatStopsMovement;
 
     private void Awake()
     {
-        inventory = new Inventory(); // Ensure inventory is created before UI setup
+        inventory = new Inventory(); 
     }
 
     void Start()
     {
+        //Movement
         movePoint.parent = null;
+
 
         if (UI_Inventory == null)
         {
@@ -31,13 +35,16 @@ public class GridMovement : MonoBehaviour
             return;
         }
 
-        UI_Inventory.SetInventory(inventory); // Now inventory should not be null
+ CalebInvetoryImplementation
+        UI_Inventory.SetInventory(inventory); 
+ main
     }
 
 
 
     void Update()
     {
+        //Movement
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
@@ -58,6 +65,7 @@ public class GridMovement : MonoBehaviour
             }
         }
     }
+ main
 
     public void AddItemToInventory(Item.ItemType itemType)
     {
@@ -77,7 +85,7 @@ public class GridMovement : MonoBehaviour
             Debug.Log("- " + item.itemType);
         }
 
-        UI_Inventory.SetInventory(inventory); // Refresh UI
+        UI_Inventory.SetInventory(inventory); 
     }
 
 }
