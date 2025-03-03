@@ -9,31 +9,38 @@ public class GridMovement : MonoBehaviour
     public Transform movePoint;
     private Inventory inventory;
 
-    //Animation - K
-    private Animator animator;
-
-    //SFX - K
-    // private bool playingFootsteps = false;
-    // public float footstepSpeed = 0.5f;
-    
-
+main
     public LayerMask whatStopsMovement;
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        inventory = new Inventory(); // Ensure inventory is created before UI setup
+    }
+
     void Start()
     {
         //Movement
         movePoint.parent = null;
-        inventory = new Inventory();
 
-        //Inventory
-        UI_Inventory.SetInventory(inventory);
 
-        //Animation - K
-        animator = GetComponent<Animator>();
+        if (UI_Inventory == null)
+        {
+            Debug.LogError("UI_Inventory reference is missing in GridMovement! Assign it in the Inspector.");
+            return;
+        }
 
+        if (inventory == null)
+        {
+            Debug.LogError("Inventory is NULL in GridMovement at Start!");
+            return;
+        }
+
+        UI_Inventory.SetInventory(inventory); // Now inventory should not be null
+ main
     }
 
-    // Update is called once per frame
+
+
     void Update()
     {
         //Movement
@@ -41,33 +48,44 @@ public class GridMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
         {
-
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
             {
-                if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, whatStopsMovement))
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, whatStopsMovement))
                 {
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                 }
-            } else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
+            }
+            else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
-                if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, whatStopsMovement))
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, whatStopsMovement))
                 {
-                movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                 }
             }
         }
     }
+ main
 
-    //Animation - K
-   /* public void Move(InputAction.CallbackContext context)
+    public void AddItemToInventory(Item.ItemType itemType)
     {
-      animator.SetBool("isWalking", true);
+        if (inventory == null)
+        {
+            Debug.LogError("Inventory is NULL in GridMovement!");
+            return;
+        }
 
-        moveInput = context.ReadValue<Vector2>();
+        inventory.AddItem(new Item { itemType = itemType, amount = 1 });
+
+        // Print current inventory contents
+        Debug.Log("Added " + itemType + " to inventory.");
+        Debug.Log("Current Inventory Items:");
+        foreach (Item item in inventory.GetItems())
+        {
+            Debug.Log("- " + item.itemType);
+        }
+
+        UI_Inventory.SetInventory(inventory); // Refresh UI
     }
-   */
-
-
-
 
 }
+
