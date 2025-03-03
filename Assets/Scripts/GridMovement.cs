@@ -8,6 +8,8 @@ public class GridMovement : MonoBehaviour
     public float movementSpeed = 5f;
     public Transform movePoint;
     private Inventory inventory;
+
+main
     public LayerMask whatStopsMovement;
 
     private void Awake()
@@ -17,7 +19,9 @@ public class GridMovement : MonoBehaviour
 
     void Start()
     {
+        //Movement
         movePoint.parent = null;
+
 
         if (UI_Inventory == null)
         {
@@ -32,12 +36,14 @@ public class GridMovement : MonoBehaviour
         }
 
         UI_Inventory.SetInventory(inventory); // Now inventory should not be null
+ main
     }
 
 
 
     void Update()
     {
+        //Movement
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
@@ -58,6 +64,7 @@ public class GridMovement : MonoBehaviour
             }
         }
     }
+ main
 
     public void AddItemToInventory(Item.ItemType itemType)
     {
