@@ -18,7 +18,7 @@ public class GridMovement : MonoBehaviour
 
     void Start()
     {
-        //Movement
+        
         movePoint.parent = null;
 
 
@@ -41,7 +41,7 @@ public class GridMovement : MonoBehaviour
 
     void Update()
     {
-        //Movement
+        
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
