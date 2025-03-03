@@ -9,7 +9,6 @@ public class GridMovement : MonoBehaviour
     public Transform movePoint;
     private Inventory inventory;
 
-
     public LayerMask whatStopsMovement;
 
     private void Awake()
@@ -35,9 +34,7 @@ public class GridMovement : MonoBehaviour
             return;
         }
 
-
         UI_Inventory.SetInventory(inventory); 
- 
     }
 
 
@@ -65,7 +62,6 @@ public class GridMovement : MonoBehaviour
             }
         }
     }
- 
 
     public void AddItemToInventory(Item.ItemType itemType)
     {
