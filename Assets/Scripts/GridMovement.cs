@@ -9,9 +9,10 @@ public class GridMovement : MonoBehaviour
     public Transform movePoint;
     private Inventory inventory;
 
-main
+
     public LayerMask whatStopsMovement;
 
+  
     private void Awake()
     {
         inventory = new Inventory(); 
@@ -35,9 +36,9 @@ main
             return;
         }
 
- CalebInvetoryImplementation
+ 
         UI_Inventory.SetInventory(inventory); 
- main
+ 
     }
 
 
@@ -65,7 +66,7 @@ main
             }
         }
     }
- main
+  
 
     public void AddItemToInventory(Item.ItemType itemType)
     {
@@ -87,6 +88,5 @@ main
 
         UI_Inventory.SetInventory(inventory); 
     }
-
 }
 

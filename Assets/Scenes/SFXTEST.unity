@@ -181,6 +181,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8218914864288610879, guid: 4d5f0141dbe891e42b8078a51a39e852, type: 3}
       insertIndex: -1
       addedObject: {fileID: 749185455}
+    - targetCorrespondingSourceObject: {fileID: 8218914864288610879, guid: 4d5f0141dbe891e42b8078a51a39e852, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 749185462}
   m_SourcePrefab: {fileID: 100100000, guid: 4d5f0141dbe891e42b8078a51a39e852, type: 3}
 --- !u!1 &256547149
 GameObject:
@@ -475,6 +478,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &749185462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749185454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a2390233c6731048abfa76685ddd313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0
+  movePoint: {fileID: 1171711089}
+  whatStopsMovement:
+    serializedVersion: 2
+    m_Bits: 1
+  animator: {fileID: 749185455}
 --- !u!1 &790194620
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +778,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1171711089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3390938108613028900, guid: 4d5f0141dbe891e42b8078a51a39e852, type: 3}
+  m_PrefabInstance: {fileID: 123515350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1542638151
 GameObject:
   m_ObjectHideFlags: 0
