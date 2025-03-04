@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - StopsMovement
+  - EndPoint
+  - Collectible
   layers:
   - Default
   - TransparentFX
