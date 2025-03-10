@@ -11,6 +11,8 @@ public class GridMovement : MonoBehaviour
 
     public LayerMask whatStopsMovement;
 
+    private GameObject[] ObjToPush;
+
     private void Awake()
     {
         inventory = new Inventory(); 
@@ -20,6 +22,8 @@ public class GridMovement : MonoBehaviour
     {
         
         movePoint.parent = null;
+
+        ObjToPush = GameObject.FindGameObjectWithTag("ObjToPush");
 
 
         if (UI_Inventory == null)
@@ -82,6 +86,40 @@ public class GridMovement : MonoBehaviour
         }
 
         UI_Inventory.SetInventory(inventory); 
+    }
+
+    public bool Move(Vector2 direction)
+    {
+        if(Mathf.Abs(direction.x) < 0.5)
+        {
+            direction.x = 0;
+        }
+        else
+        {
+            direction.y = 0;
+        }
+        direction.Normalize();
+    }
+
+    public bool Blocked(Vector3 position, Vector2 direction)
+    {
+        Vector2 newpos = new Vector2(position.x, position.y) + direction;
+
+        foreach (var obj in Obstacles)
+        {
+            if(obj.transform.position.x == newpos.x && ObjToPush.transform.position.y == newpos.y)
+            {
+                return true;
+            }
+        }
+
+        foreach (var objToPush in ObjToPush)
+        {
+            if(ObjToPush.transform.position.x = newpos.x && objToPush.transform/position.y == newpos.y)
+            {
+                Push objpush = objToPush.GetComponent<Push>();
+            }
+        }
     }
 
 }
