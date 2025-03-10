@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static Item;
 
 public class EndGameManager : MonoBehaviour
 {
@@ -13,17 +15,19 @@ public class EndGameManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        if (other.gameObject.CompareTag("Collectible"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            collectibleCount++;
-            Destroy(other.gameObject); 
-        }
+            GridMovement gridMovement = other.gameObject.GetComponent<GridMovement>();
+            List<Item> inventoryitems = gridMovement.inventory.GetItems();
+            ItemType itemToFind = Item.ItemType.Docs;
 
-        
-        else if (other.gameObject.CompareTag("Player") && collectibleCount == totalCollectibles)
-        {
-            GameOver();
+            for (int i = 0; i < inventoryitems.Count; i++)
+            {
+                if (inventoryitems[i].itemType == itemToFind)
+                {
+                    GameOver();
+                }
+            }
         }
     }
 
