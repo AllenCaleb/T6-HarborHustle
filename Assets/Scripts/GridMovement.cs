@@ -7,7 +7,7 @@ public class GridMovement : MonoBehaviour
     [SerializeField] private UI_Inventory UI_Inventory;
     public float movementSpeed = 5f;
     public Transform movePoint;
-    private Inventory inventory;
+    public Inventory inventory;
 
     public LayerMask whatStopsMovement;
 
