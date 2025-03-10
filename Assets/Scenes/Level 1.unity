@@ -1714,6 +1714,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   animator: {fileID: 212419463}
+--- !u!4 &212419469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5905415437755048023, guid: 4d5f0141dbe891e42b8078a51a39e852, type: 3}
+  m_PrefabInstance: {fileID: 622777360200202862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &261368176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3516,7 +3521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498573927d67e104fb27da4ee53d5e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 212419469}
   offset: {x: 0, y: -1, z: 0}
   smoothSpeed: 0.125
 --- !u!1001 &547225694

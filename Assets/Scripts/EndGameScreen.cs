@@ -9,7 +9,7 @@ public class EndGameScreen : MonoBehaviour
 
     public void Restart()
     {
-        // Disable the Game Over UI before reloading the scene
+        
         if (gameOverUI != null)
         {
             gameOverUI.SetActive(false);  
