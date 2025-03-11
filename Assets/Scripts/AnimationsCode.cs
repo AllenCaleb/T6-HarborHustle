@@ -63,7 +63,58 @@ public class SpriteMover : MonoBehaviour
             animator.SetBool("IsWalkingRight", false);
         }
 
-
-
     }
+
+   
+   /* {
+        public Animator animator;
+        public bool isNearCrate;  // A flag to check if the player is near a crate
+        private bool isPushing;   // A flag to check if the player is pushing the crate
+
+        void Update()
+        {
+            // Check if the player is near a crate (for this example, assuming isNearCrate is set elsewhere)
+            if (isNearCrate && Input.GetKeyDown(KeyCode.W))
+            {
+                // Trigger pushing animation
+                animator.SetBool("IsPushing", true);  // Assuming the animator has a boolean parameter "IsPushing"
+                isPushing = true;
+            }
+            else if (Input.GetKeyUp(KeyCode.W))
+            {
+                // Stop pushing animation
+                animator.SetBool("IsPushing", false);
+                isPushing = false;
+            }
+
+            // Check for walking animation if not pushing
+            if (!isPushing && Input.GetKey(KeyCode.W))
+            {
+                animator.SetBool("IsWalkingUp", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.W))
+            {
+                animator.SetBool("IsWalkingUp", false);
+            }
+        }
+
+        // This function could be triggered when the player is near a crate
+        // For example, using a trigger zone, raycast, or collision detection
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Crate"))
+            {
+                isNearCrate = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Crate"))
+            {
+                isNearCrate = false;
+            }
+        }*/
+    } 
+   
 }
