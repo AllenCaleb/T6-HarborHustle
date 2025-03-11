@@ -11,7 +11,7 @@ public class GridMovement : MonoBehaviour
 
     public LayerMask whatStopsMovement;
 
-    private GameObject[] ObjToPush;
+    private GameObject ObjToPush;
 
     private void Awake()
     {
@@ -99,8 +99,19 @@ public class GridMovement : MonoBehaviour
             direction.y = 0;
         }
         direction.Normalize();
+        /*
+        if(Blocked(transformn.position,direction))
+        {
+            return false;
+        }
+        else
+        {
+            transform.Translate(direction);
+            return true;
+        }
+        */
     }
-
+    /*
     public bool Blocked(Vector3 position, Vector2 direction)
     {
         Vector2 newpos = new Vector2(position.x, position.y) + direction;
@@ -115,12 +126,21 @@ public class GridMovement : MonoBehaviour
 
         foreach (var objToPush in ObjToPush)
         {
-            if(ObjToPush.transform.position.x = newpos.x && objToPush.transform/position.y == newpos.y)
+            if(ObjToPush.transform.position.x == newpos.x && objToPush.transform/position.y == newpos.y)
             {
                 Push objpush = objToPush.GetComponent<Push>();
+                if(objpush && objpush.Move(direction))
+                {
+                    return false;
+                }
+                {
+                    return true;
+                }
             }
         }
+        return false;
     }
+    */
 
 }
 
