@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
         StartDialogue();
     }
 
-    // Update is called once per frame
+    /* Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -32,10 +32,45 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
+    }*/
+    private bool isTyping = false; // Prevents multiple clicks during typing
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (lines == null || lines.Length == 0)
+            {
+                Debug.LogError("Dialogue lines are empty or not assigned!");
+                return;
+            }
+
+            if (index < 0 || index >= lines.Length)
+            {
+                Debug.LogError($"Index {index} is out of bounds! Lines length: {lines.Length}");
+                return;
+            }
+
+            if (isTyping) // If typing is in progress, complete the line instantly
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+                isTyping = false; // Reset flag after finishing
+            }
+            else // Otherwise, go to the next line
+            {
+                NextLine();
+            }
+        }
     }
 
     void StartDialogue()
     {
+        if (lines == null || lines.Length == 0)
+        {
+            Debug.LogError("Dialogue lines are empty or not assigned!");
+            return;
+        }
         index = 0;
         StartCoroutine(TypeLine());
     }
@@ -51,6 +86,13 @@ public class Dialogue : MonoBehaviour
 
     void NextLine()
     {
+        if (lines == null || lines.Length == 0)
+        {
+            Debug.LogError("Dialogue lines are empty or not assigned!");
+            gameObject.SetActive(false);
+            return;
+        }
+
         if (index < lines.Length - 1)
         {
             index++;
@@ -62,4 +104,5 @@ public class Dialogue : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
 }

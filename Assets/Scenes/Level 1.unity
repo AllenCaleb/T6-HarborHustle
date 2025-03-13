@@ -3132,7 +3132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 103, y: -112}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334292560
@@ -3532,6 +3532,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3463103861551604914, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6936157830012551621, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
       propertyPath: m_Name
       value: BigBox (2)
@@ -3618,7 +3622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &613001867
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3733,6 +3737,10 @@ PrefabInstance:
     - target: {fileID: 4189119612717128089, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
       propertyPath: m_Name
       value: Green Crate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661816684085960176, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6912829725183409753, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5088,6 +5096,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266005103}
     m_Modifications:
+    - target: {fileID: 637024452412460897, guid: ad3443881ec683a4b826b5558fdaf689, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3066825311544182546, guid: ad3443881ec683a4b826b5558fdaf689, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.4945138
@@ -17659,6 +17671,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3642242869686608999, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5905415437755048023, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.76
@@ -17715,7 +17731,8 @@ PrefabInstance:
       propertyPath: UI_Inventory
       value: 
       objectReference: {fileID: 334292560}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8503084215206953261, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17900,6 +17917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Crate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5661816684085960176, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6912829725183409753, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5054865
@@ -18046,6 +18067,10 @@ PrefabInstance:
     - target: {fileID: 4189119612717128089, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
       propertyPath: m_Name
       value: Green Crate (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661816684085960176, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6912829725183409753, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26360,6 +26385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 266005103}
     m_Modifications:
+    - target: {fileID: -1063425589161826311, guid: afb438e1f970c014aa8c35b6cd497789, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2092692137753843497, guid: afb438e1f970c014aa8c35b6cd497789, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.50548625
@@ -26457,6 +26486,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3463103861551604914, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6936157830012551621, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
       propertyPath: m_Name
       value: BigBox
@@ -26477,6 +26510,10 @@ PrefabInstance:
     - target: {fileID: 4189119612717128089, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
       propertyPath: m_Name
       value: Green Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661816684085960176, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6912829725183409753, guid: 8ba651809766bc940ab7488ec77ad0fb, type: 3}
       propertyPath: m_LocalPosition.x
