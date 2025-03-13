@@ -512,6 +512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5827971656876316153, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
       propertyPath: m_Name
       value: CrateObject (2)
@@ -573,13 +577,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5827971656876316153, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
       propertyPath: m_Name
       value: CrateObject (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
       propertyPath: m_TagString
@@ -640,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5827971656876316153, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
       propertyPath: m_Name
@@ -1273,6 +1281,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5519440366868062951, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5827971656876316153, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
