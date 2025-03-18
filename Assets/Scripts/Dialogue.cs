@@ -102,7 +102,7 @@ public class Dialogue : MonoBehaviour
         }
        else
         {
-            Invoke("DeactivateDialogueBox", 6f);
+            Invoke("DeactivateDialogueBox", 13f);
         }
     }
     void DeactivateDialogueBox()
