@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ThunderManager : MonoBehaviour
 {
     public CameraShake cameraShake; // Reference to the camera shake script
-    public Light sceneLight; // Optional for flashing
+    public Light sceneLight; // Reference to the Directional Light (for the lightning flash)
 
     void Start()
     {
@@ -18,8 +17,12 @@ public class ThunderManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(5f, 15f)); // Thunder happens every 5-15 seconds
-            cameraShake.TriggerShake(); // Call the shake effect
-            // You can also trigger a thunder sound or lightning visual effect here
+
+            // Trigger camera shake (simulating thunder shake)
+            cameraShake.TriggerShake();
+
+            // Trigger the lightning flash (simulating the lightning flash)
+            StartCoroutine(FlashScreen());
         }
     }
 
@@ -27,9 +30,15 @@ public class ThunderManager : MonoBehaviour
     {
         if (sceneLight != null)
         {
-            sceneLight.intensity = 5; // Bright flash
-            yield return new WaitForSeconds(0.1f); // Flash duration
-            sceneLight.intensity = 1; // Normal lighting
+            // Bright flash of lightning
+            sceneLight.intensity = 5f;  // You can adjust this value for a more dramatic effect
+            sceneLight.color = Color.white;  // You can optionally change the color to white for a lightning effect
+
+            // Wait for the flash to last (0.1 seconds or as desired)
+            yield return new WaitForSeconds(0.1f);
+
+            // Return to normal light intensity
+            sceneLight.intensity = 1f; // Set it back to normal lighting intensity
         }
     }
 }
