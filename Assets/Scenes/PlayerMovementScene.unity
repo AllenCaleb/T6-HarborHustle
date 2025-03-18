@@ -367,11 +367,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 778916125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71f506db32daf14d98b6941db8ad2f2, type: 3}
+  m_Script: {fileID: 11500000, guid: b834b20dc51881f42861f9f5944c7dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowSpeed: 2
-  target: {fileID: 1525130453}
+  distance: 1
+  boxMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1525130452
 GameObject:
   m_ObjectHideFlags: 0
