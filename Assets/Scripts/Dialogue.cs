@@ -69,6 +69,7 @@ public class Dialogue : MonoBehaviour
         if (lines == null || lines.Length == 0)
         {
             Debug.LogError("Dialogue lines are empty or not assigned!");
+            lines = new string[] { "Default dialogue line." };
             return;
         }
         index = 0;
@@ -99,10 +100,10 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-        else
+       /* else
         {
             gameObject.SetActive(false);
-        }
+        }*/
     }
 
 }
