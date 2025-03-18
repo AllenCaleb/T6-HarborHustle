@@ -12,7 +12,7 @@ public class ItemPickup : MonoBehaviour
             if (playerInventory != null)
             {
                 playerInventory.AddItemToInventory(itemType);
-                Debug.Log("Picked up: + itemType");
+                Debug.Log("Picked up:" + itemType);
 
                 Destroy(gameObject); 
             }
