@@ -100,10 +100,13 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-       /* else
+       else
         {
-            gameObject.SetActive(false);
-        }*/
+            Invoke("DeactivateDialogueBox", 6f);
+        }
     }
-
+    void DeactivateDialogueBox()
+    {
+        gameObject.SetActive(false);
+    }
 }
