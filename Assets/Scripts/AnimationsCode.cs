@@ -7,13 +7,17 @@ public class SpriteMover : MonoBehaviour
     public float movementSpeed = 5f;
     public Transform movePoint;
     public LayerMask whatStopsMovement;
-    public bool isNearCrate;
-    public bool isPushingUp;
-    public bool isPushingLeft;
-    public bool isPushingDown;
-    public bool isPushingRight;
-    
+
+    private bool isPushingUp;
+    private bool isPushingLeft;
+    private bool isPushingDown;
+    private bool isPushingRight;
+ 
+    public float detectionRadius = 1f; 
+    private bool isNearCrate = false;
+
     public Animator animator;
+
     void Start()
     {
 
@@ -112,22 +116,28 @@ public class SpriteMover : MonoBehaviour
         {
             animator.SetBool("IsWalkingRight", false);
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Crate"))
         {
-            isNearCrate = false;
-        }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Crate"))
-        {
-            isNearCrate = true;
-        }
-    }
+            var crates = GameObject.FindGameObjectsWithTag("Crate");
 
+            foreach (GameObject crate in crates)
+            {
+                float distanceToCrate = Vector3.Distance(transform.position, crate.transform.position);
+
+                if (distanceToCrate <= detectionRadius)
+                {
+                    if (!isNearCrate)
+                    {
+                        isNearCrate = true;
+                    }
+                    else
+                    {
+                        isNearCrate = false;
+                    }
+                }
+            }
+        }
+
+    }
 }
