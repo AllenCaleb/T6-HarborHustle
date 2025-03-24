@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5561002167592501935}
   - component: {fileID: 5661816684085960176}
   - component: {fileID: 7156769591466802490}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Green Crate
-  m_TagString: Untagged
+  m_TagString: StopsMovement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,5 +156,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
