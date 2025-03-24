@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1198228746356612319}
   - component: {fileID: -1063425589161826311}
   - component: {fileID: -345188480888846929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red Crate
-  m_TagString: Untagged
+  m_TagString: StopsMovement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -904081630, guid: 2fa37bea99acff24dbd62b34e878daca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,5 +156,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4

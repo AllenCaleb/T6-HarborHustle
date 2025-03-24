@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 444912861770244}
   - component: {fileID: 5461030685877334913}
   - component: {fileID: 2859701547395505837}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crates_2
-  m_TagString: Untagged
+  m_TagString: StopsMovement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
