@@ -16,6 +16,9 @@ public class SpriteMover : MonoBehaviour
     public float detectionRadius = 1f; 
     private bool isNearCrate = false;
 
+    private bool playingFootsteps = false;
+    public float footstepSpeed = 0.5f;
+
     public Animator animator;
 
     void Start()
@@ -45,10 +48,12 @@ public class SpriteMover : MonoBehaviour
         if (!isPushingUp && Input.GetKey(KeyCode.W))
         {
             animator.SetBool("IsWalkingUp", true);
+            StartFootsteps();
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
             animator.SetBool("IsWalkingUp", false);
+            StopFootsteps();
         }
 
         if (isNearCrate && Input.GetKeyDown(KeyCode.A))
@@ -67,10 +72,12 @@ public class SpriteMover : MonoBehaviour
         if (!isPushingLeft && Input.GetKey(KeyCode.A))
         {
             animator.SetBool("IsWalkingLeft", true);
+            StartFootsteps();
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
             animator.SetBool("IsWalkingLeft", false);
+            StopFootsteps();
         }
 
         if (isNearCrate && Input.GetKeyDown(KeyCode.S))
@@ -89,10 +96,12 @@ public class SpriteMover : MonoBehaviour
         if (!isPushingDown && Input.GetKey(KeyCode.S))
         {
             animator.SetBool("IsWalkingDown", true);
+            StartFootsteps();
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
             animator.SetBool("IsWalkingDown", false);
+            StopFootsteps();
         }
 
         if (isNearCrate && Input.GetKeyDown(KeyCode.D))
@@ -111,10 +120,12 @@ public class SpriteMover : MonoBehaviour
         if (!isPushingRight && Input.GetKey(KeyCode.D))
         {
             animator.SetBool("IsWalkingRight", true);
+            StartFootsteps();
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
             animator.SetBool("IsWalkingRight", false);
+            StopFootsteps();
         }
 
         {
@@ -139,5 +150,21 @@ public class SpriteMover : MonoBehaviour
             }
         }
 
+        void StartFootsteps()
+        {
+            playingFootsteps = true;
+            InvokeRepeating(nameof(PlayFootstep), 0f, footstepSpeed);
+        }
+
+        void StopFootsteps()
+        {
+            playingFootsteps = false;
+            CancelInvoke(nameof(PlayFootstep));
+        }
+
+        void PlayFootstep()
+        {
+            SoundEffectManager.Play("Footstep");
+        }
     }
 }

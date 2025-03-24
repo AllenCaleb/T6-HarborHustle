@@ -10,30 +10,14 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    private bool isTyping = false; // Prevents multiple clicks during typing
+
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
     }
-
-    /* Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
-        }
-    }*/
-    private bool isTyping = false; // Prevents multiple clicks during typing
 
     void Update()
     {
@@ -78,11 +62,14 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        textComponent.text = string.Empty;  // Ensure text is cleared before starting typing
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+
+        isTyping = false;  // Mark typing as finished
     }
 
     void NextLine()
@@ -97,14 +84,14 @@ public class Dialogue : MonoBehaviour
         if (index < lines.Length - 1)
         {
             index++;
-            textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-       else
+        else
         {
-            Invoke("DeactivateDialogueBox", 13f);
+            Invoke("DeactivateDialogueBox", 15f);  // Set a short delay before deactivating
         }
     }
+
     void DeactivateDialogueBox()
     {
         gameObject.SetActive(false);
