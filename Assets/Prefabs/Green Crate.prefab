@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7156769591466802490}
   m_Layer: 7
   m_Name: Green Crate
-  m_TagString: StopsMovement
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

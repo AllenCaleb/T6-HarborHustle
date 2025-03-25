@@ -9,6 +9,7 @@ TagManager:
   - Collectible
   - Crate
   - Sea
+  - Box
   layers:
   - Default
   - TransparentFX
