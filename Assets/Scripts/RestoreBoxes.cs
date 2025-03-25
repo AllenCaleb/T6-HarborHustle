@@ -2,16 +2,34 @@ using UnityEngine;
 
 public class RestoreBoxes : MonoBehaviour
 {
-    public Transform[] boxes; // Assign all box objects in the inspector
+    private Transform[] boxes;
 
     private void Start()
     {
-        if (GameManager.Instance.boxPositions.Length > 0)
+        
+        GameObject[] boxObjects = GameObject.FindGameObjectsWithTag("Box");
+        boxes = new Transform[boxObjects.Length];
+
+        for (int i = 0; i < boxObjects.Length; i++)
+        {
+            boxes[i] = boxObjects[i].transform;
+        }
+
+        
+        if (GameManager.Instance != null && GameManager.Instance.boxPositions != null &&
+            GameManager.Instance.boxPositions.Length == boxes.Length)
         {
             for (int i = 0; i < boxes.Length; i++)
             {
-                boxes[i].position = GameManager.Instance.boxPositions[i];
+                if (boxes[i] != null) 
+                {
+                    boxes[i].position = GameManager.Instance.boxPositions[i];
+                }
             }
+        }
+        else
+        {
+            Debug.LogWarning("Box positions data is missing or does not match the number of boxes.");
         }
     }
 }
