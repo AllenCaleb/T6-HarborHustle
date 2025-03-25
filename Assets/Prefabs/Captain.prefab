@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8730955370894338932}
   - component: {fileID: 3036214425590548089}
   - component: {fileID: 6239731914745889584}
+  - component: {fileID: 1650645470266899414}
+  - component: {fileID: 457180585268114009}
   m_Layer: 0
   m_Name: Captain
   m_TagString: Untagged
@@ -99,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 7331563201037372362}
+  dialogueCanvas: {fileID: 4441782993307500389}
   lines:
   - Just my luck, the one capable crew person on board is the rookie.
   - "We\u2019ve misplaced the shipping documents."
@@ -106,6 +109,64 @@ MonoBehaviour:
   - We need you to search the area and find them.
   - Go and earn your sea legs rookie!
   textSpeed: 0.05
+--- !u!114 &1650645470266899414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092301074640294162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec05cc493b34dac4faa9134f977dcba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueScript: {fileID: 6239731914745889584}
+--- !u!61 &457180585268114009
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092301074640294162}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
 --- !u!1001 &1587912710641167745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -203,6 +264,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8067f814a71003b43b42aa0cf52faa5c, type: 3}
+--- !u!1 &4441782993307500389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3147176298161296100, guid: 8067f814a71003b43b42aa0cf52faa5c, type: 3}
+  m_PrefabInstance: {fileID: 1587912710641167745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6950593415555641178 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8537718581931328219, guid: 8067f814a71003b43b42aa0cf52faa5c, type: 3}

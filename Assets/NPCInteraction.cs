@@ -9,11 +9,11 @@ public class NPCInteraction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Make sure the dialogue is not showing at the start
-        if (dialogueScript != null)
-        {
-            dialogueScript.gameObject.SetActive(false);  // Ensure the dialogue box is hidden initially
-        }
+        //// Make sure the dialogue is not showing at the start
+        //if (dialogueScript != null)
+        //{
+        //    dialogueScript.gameObject.SetActive(false);  // Ensure the dialogue box is hidden initially
+        //}
     }
 
     void Update()
