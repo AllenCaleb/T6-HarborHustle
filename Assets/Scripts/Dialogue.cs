@@ -48,7 +48,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         if (lines == null || lines.Length == 0)
         {
@@ -88,7 +88,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            Invoke("DeactivateDialogueBox", 15f);  // Set a short delay before deactivating
+            Invoke("DeactivateDialogueBox", 19f);  // Set a short delay before deactivating
         }
     }
 
