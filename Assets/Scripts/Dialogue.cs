@@ -6,6 +6,7 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+    public GameObject dialogueCanvas;
     public string[] lines;
     public float textSpeed;
 
@@ -16,7 +17,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
+        dialogueCanvas.SetActive(false);
     }
 
     void Update()
@@ -50,6 +51,7 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
+        dialogueCanvas.SetActive(true);
         if (lines == null || lines.Length == 0)
         {
             Debug.LogError("Dialogue lines are empty or not assigned!");
@@ -88,12 +90,12 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            Invoke("DeactivateDialogueBox", 19f);  // Set a short delay before deactivating
+            Invoke("DeactivateDialogueBox", 10.0f);  // Set a short delay before deactivating
         }
     }
 
     void DeactivateDialogueBox()
     {
-        gameObject.SetActive(false);
+        dialogueCanvas.SetActive(false);
     }
 }
