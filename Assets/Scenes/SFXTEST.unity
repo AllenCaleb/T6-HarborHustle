@@ -1306,6 +1306,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 18226213}
     - target: {fileID: 6993602770928389263, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
+      propertyPath: footstepSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6993602770928389263, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
       propertyPath: detectionRadius
       value: 5
       objectReference: {fileID: 0}

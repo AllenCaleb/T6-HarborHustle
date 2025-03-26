@@ -7,7 +7,6 @@ public class SoundEffectLibrary : MonoBehaviour
 {
     [SerializeField] private SoundEffectGroup[] soundEffectGroups;
 
-    // String = name
     private Dictionary<string, List<AudioClip>> SoundDictionary;
 
     private void Awake()

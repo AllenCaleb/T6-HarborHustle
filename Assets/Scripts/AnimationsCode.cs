@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteMover : MonoBehaviour
+public class Animations : MonoBehaviour
 {
     public float movementSpeed = 5f;
     public Transform movePoint;
@@ -25,22 +25,16 @@ public class SpriteMover : MonoBehaviour
     {
 
     }
-
+    
     private void Update()
     {
-
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
-
         if (isNearCrate && Input.GetKeyDown(KeyCode.W))
         {
-
             animator.SetBool("IsPushingUp", true);
             isPushingUp = true;
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
-
             animator.SetBool("IsPushingUp", false);
             isPushingUp = false;
         }
@@ -58,13 +52,11 @@ public class SpriteMover : MonoBehaviour
 
         if (isNearCrate && Input.GetKeyDown(KeyCode.A))
         {
-
             animator.SetBool("IsPushingLeft", true);
             isPushingLeft = true;
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {
-
             animator.SetBool("IsPushingLeft", false);
             isPushingLeft = false;
         }
@@ -82,13 +74,11 @@ public class SpriteMover : MonoBehaviour
 
         if (isNearCrate && Input.GetKeyDown(KeyCode.S))
         {
-
             animator.SetBool("IsPushingDown", true);
             isPushingDown = true;
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
-
             animator.SetBool("IsPushingDown", false);
             isPushingDown = false;
         }
@@ -106,13 +96,11 @@ public class SpriteMover : MonoBehaviour
 
         if (isNearCrate && Input.GetKeyDown(KeyCode.D))
         {
-
             animator.SetBool("IsPushingRight", true);
             isPushingRight = true;
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
-
             animator.SetBool("IsPushingRight", false);
             isPushingRight = false;
         }
@@ -128,41 +116,38 @@ public class SpriteMover : MonoBehaviour
             StopFootsteps();
         }
 
-        {
+       var crates = GameObject.FindGameObjectsWithTag("Crate");
 
-            var crates = GameObject.FindGameObjectsWithTag("Crate");
+       foreach (GameObject crate in crates)
+       {
+            float distanceToCrate = Vector3.Distance(transform.position, crate.transform.position);
 
-            foreach (GameObject crate in crates)
+            if (distanceToCrate >= detectionRadius)
             {
-                float distanceToCrate = Vector3.Distance(transform.position, crate.transform.position);
-
-                if (distanceToCrate <= detectionRadius)
+                if (!isNearCrate)
                 {
-                    if (!isNearCrate)
-                    {
-                        isNearCrate = true;
-                    }
-                    else
-                    {
-                        isNearCrate = false;
-                    }
+                    isNearCrate = true;
+                }
+                else
+                {
+                    isNearCrate = false;
                 }
             }
-        }
+       }
 
         void StartFootsteps()
         {
             playingFootsteps = true;
-            InvokeRepeating(nameof(PlayFootstep), 0f, footstepSpeed);
+            InvokeRepeating(nameof(PlayFootsteps), 0f, footstepSpeed);
         }
 
         void StopFootsteps()
         {
             playingFootsteps = false;
-            CancelInvoke(nameof(PlayFootstep));
+            CancelInvoke(nameof(PlayFootsteps));
         }
 
-        void PlayFootstep()
+        void PlayFootsteps()
         {
             SoundEffectManager.Play("Footstep");
         }

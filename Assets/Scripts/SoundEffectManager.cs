@@ -38,7 +38,7 @@ public class SoundEffectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sfxSlider.onValueChanged.AddListener(delegate { OnValuechanged(); });
+        sfxSlider.onValueChanged.AddListener(delegate {OnValuechanged(); });
     }
 
     public static void SetVolume(float volume)
