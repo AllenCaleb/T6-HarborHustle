@@ -378,30 +378,6 @@ MonoBehaviour:
   offsetLeft: {x: -1, y: 0}
   offsetUp: {x: 0, y: 1}
   offsetDown: {x: 0, y: -1}
---- !u!1 &1047945362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6936157830012551621, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
-  m_PrefabInstance: {fileID: 4058501649915096273}
-  m_PrefabAsset: {fileID: 0}
---- !u!255 &1047945367
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047945362}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 778916129}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 1, y: 0}
-  m_ConnectedAnchor: {x: -2, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!1 &1525130452
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,35 +609,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2000645033}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
---- !u!1 &2000645028 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
-  m_PrefabInstance: {fileID: 1869648226}
-  m_PrefabAsset: {fileID: 0}
---- !u!255 &2000645033
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000645028}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 778916129}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 1, y: 0}
-  m_ConnectedAnchor: {x: 2, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!1001 &2140167305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,10 +739,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6936157830012551621, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1047945367}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
