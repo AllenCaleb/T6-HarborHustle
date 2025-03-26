@@ -8,9 +8,8 @@ TagManager:
   - EndPoint
   - Collectible
   - Crate
-  - box
-  - Box
   - Sea
+  - Box
   layers:
   - Default
   - TransparentFX

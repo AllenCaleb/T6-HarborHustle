@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6936157830012551621, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
       propertyPath: m_TagString
-      value: box
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7655218137799258219, guid: 646640bb74f11db4f8570cfc4518b891, type: 3}
       propertyPath: m_BodyType
