@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private Animator animator;
 
+    public float detectionRadius = 1f;
+    private bool IsNearCrate = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +33,25 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = moveInput * moveSpeed;
+
+        var crates = GameObject.FindGameObjectsWithTag("Crate");
+
+        foreach (GameObject crate in crates)
+        {
+            float distanceToCrate = Vector3.Distance(transform.position, crate.transform.position);
+
+            if (distanceToCrate >= detectionRadius)
+            {
+                if (!IsNearCrate)
+                {
+                    IsNearCrate = true;
+                }
+                else
+                {
+                    IsNearCrate = false;
+                }
+            }
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -48,4 +70,5 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("InputX", moveInput.x);
         animator.SetFloat("InputY", moveInput.y);
     }
+
 }
