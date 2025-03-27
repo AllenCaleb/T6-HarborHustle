@@ -8,7 +8,7 @@ public class EndGameManager : MonoBehaviour
 {
     public int totalCollectibles; 
     public GameObject EndPoint;
-    public GameObject gameOverUI;
+    public GameObject GameEndUi;
 
     private int collectibleCount = 0;
     private bool gameEnd = false;
@@ -35,7 +35,7 @@ public class EndGameManager : MonoBehaviour
     {
         if (!gameEnd)
         {
-            gameOverUI.SetActive(true); 
+            GameEndUi.SetActive(true); 
             gameEnd = true; 
         }
     }

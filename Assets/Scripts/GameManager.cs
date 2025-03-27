@@ -3,22 +3,23 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; // Singleton instance
+    public static GameManager Instance; 
 
-    public int collectedItems = 0;  // Stores collected items
-    public Vector3[] boxPositions;  // Stores box positions
+    public int collectedItems = 0; 
+    public Vector3[] boxPositions;
+
 
     private void Awake()
     {
-        // Ensure only one instance of GameManager exists
+      
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Keep it alive across scenes
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
-            Destroy(gameObject); // Destroy duplicate instances
+            Destroy(gameObject); 
         }
     }
 
@@ -69,4 +70,5 @@ public class GameManager : MonoBehaviour
         boxPositions = new Vector3[0]; 
         Debug.Log("Game data reset!");
     }
+  
 }
