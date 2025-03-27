@@ -64685,6 +64685,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &145015527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+  m_PrefabInstance: {fileID: 948711693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &153609168
 GameObject:
   m_ObjectHideFlags: 0
@@ -72553,6 +72558,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 534175954}
+--- !u!114 &625505179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625505159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b834b20dc51881f42861f9f5944c7dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 1
+  boxMask:
+    serializedVersion: 2
+    m_Bits: 439
+  offsetRight: {x: 1, y: 0}
+  offsetLeft: {x: -1, y: 0}
+  offsetUp: {x: 0, y: 1}
+  offsetDown: {x: 0, y: -1}
 --- !u!1 &642560504
 GameObject:
   m_ObjectHideFlags: 0
@@ -79196,7 +79221,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6988648791543932609, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1143184568}
   m_SourcePrefab: {fileID: 100100000, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
 --- !u!1 &953756404
 GameObject:
@@ -81306,6 +81334,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5519440366868062951, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
   m_PrefabInstance: {fileID: 948711693}
   m_PrefabAsset: {fileID: 0}
+--- !u!255 &1143184568
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145015527}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -26.063786, y: 32.095535}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1001 &1148246456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87760,6 +87807,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8218914864288610879, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 625505178}
+    - targetCorrespondingSourceObject: {fileID: 8218914864288610879, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 625505179}
   m_SourcePrefab: {fileID: 100100000, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
 --- !u!4 &1289915611 stripped
 Transform:
