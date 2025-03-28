@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
     public bool isDead;
 
-    public GameOverManager gameManager;
+    public GameOverManager gameOverManager;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         {
             isDead = true;
             gameObject.SetActive(false);
-            gameManager.PlayerDeath();
+            gameOverManager.PlayerDeath();
             Debug.Log("Dead");
         }
     }
