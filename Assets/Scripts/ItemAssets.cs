@@ -12,5 +12,5 @@ public class ItemAssets : MonoBehaviour
     }
 
     public Sprite DocsSprite;
-    public Sprite CompassSprite;
+    public Sprite HatSprite;
 }

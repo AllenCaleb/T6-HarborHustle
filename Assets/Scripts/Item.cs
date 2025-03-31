@@ -6,7 +6,7 @@ public class Item
 {
     public enum ItemType
     {
-        Compass, Docs
+        Hat, Docs
     }
     public ItemType itemType;
     public int amount;
@@ -22,7 +22,7 @@ public class Item
         switch (itemType)
         {
             default:
-            case ItemType.Compass: return ItemAssets.Instance.CompassSprite;
+            case ItemType.Hat: return ItemAssets.Instance.HatSprite;
             case ItemType.Docs: return ItemAssets.Instance.DocsSprite;
         }
     }
