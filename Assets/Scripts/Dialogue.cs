@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (lines == null || lines.Length == 0)
             {
@@ -90,7 +90,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            Invoke("DeactivateDialogueBox", 10.0f);  // Set a short delay before deactivating
+            Invoke("DeactivateDialogueBox", 2f);  // Set a short delay before deactivating
         }
     }
 
