@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cfe2ac4c7e34cbf4a8313127cb15d155
+guid: 8cb5df25864b50446ae0ea466c01bb07
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SailorWalkSet_0
+      name: MarinaIdleSet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb84edd53aef13441bac2de31796e980
-      internalID: 341288604
+      spriteID: df0e0bc8791072e4587cec0f501b9237
+      internalID: 109354706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_1
+      name: MarinaIdleSet_1
       rect:
         serializedVersion: 2
         x: 48
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de0c2267f1e5c354eafea282cc136115
-      internalID: -1118126660
+      spriteID: 3a5bada675cb0a64cacb56c82dfe40e2
+      internalID: -707794658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_2
+      name: MarinaIdleSet_2
       rect:
         serializedVersion: 2
         x: 96
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28a637c6cbd2bc24799dc3c7c924e6a1
-      internalID: -257418695
+      spriteID: 556f736a3be51b24e87d0eb16f6c1234
+      internalID: 680495634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_3
+      name: MarinaIdleSet_3
       rect:
         serializedVersion: 2
         x: 144
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d76cd7e03a4cf8419d0c259f08ce23a
-      internalID: 651001342
+      spriteID: b3c2b3bc8f7dcde48b27095b0d22cfc9
+      internalID: -1087781417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_4
+      name: MarinaIdleSet_4
       rect:
         serializedVersion: 2
         x: 192
@@ -208,35 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6903d8391e095f045842a9e23280b996
-      internalID: 564188893
+      spriteID: bb61938c451614c44a0b040f73be275e
+      internalID: -86892104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 48
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 927408e47224da14bb2418c7aa6e4135
-      internalID: -1591333161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SailorWalkSet_6
+      name: MarinaIdleSet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -250,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ce18370801a714489d0dc26f8b5fece
-      internalID: -255332150
+      spriteID: 4e67b0b216f50aa4488d0ed41ea124d4
+      internalID: -957651312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_7
+      name: MarinaIdleSet_6
       rect:
         serializedVersion: 2
         x: 48
@@ -271,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 175aaa490678bea4b8fd1b0d578bbe8f
-      internalID: 885067903
+      spriteID: e35d773f9d184544095d2c9d74352ea4
+      internalID: -1963399872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_8
+      name: MarinaIdleSet_7
       rect:
         serializedVersion: 2
         x: 96
@@ -292,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41f54538443b2ae4ca975776377b676d
-      internalID: -554134129
+      spriteID: ebcc99e464ff10c449419d47605ab1c5
+      internalID: -1773027486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_9
+      name: MarinaIdleSet_8
       rect:
         serializedVersion: 2
         x: 144
@@ -313,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da9295c1a8027c9428d710a67d07bcab
-      internalID: 2041348598
+      spriteID: 363b4901f05bf3b46a59af7ae3835c3c
+      internalID: -1705541944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SailorWalkSet_10
+      name: MarinaIdleSet_9
       rect:
         serializedVersion: 2
         x: 192
@@ -334,29 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88b5747b6ae83194e9d6d49b025ac4b9
-      internalID: 1479690856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SailorWalkSet_11
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a08ed28a22562a4b90b96ad263c0c00
-      internalID: 1349114406
+      spriteID: b583b1393ddd6da4e935e6c8543ab39d
+      internalID: 1816028319
       vertices: []
       indices: 
       edges: []
@@ -372,18 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SailorWalkSet_0: 341288604
-      SailorWalkSet_1: -1118126660
-      SailorWalkSet_10: 1479690856
-      SailorWalkSet_11: 1349114406
-      SailorWalkSet_2: -257418695
-      SailorWalkSet_3: 651001342
-      SailorWalkSet_4: 564188893
-      SailorWalkSet_5: -1591333161
-      SailorWalkSet_6: -255332150
-      SailorWalkSet_7: 885067903
-      SailorWalkSet_8: -554134129
-      SailorWalkSet_9: 2041348598
+      MarinaIdleSet_0: 109354706
+      MarinaIdleSet_1: -707794658
+      MarinaIdleSet_2: 680495634
+      MarinaIdleSet_3: -1087781417
+      MarinaIdleSet_4: -86892104
+      MarinaIdleSet_5: -957651312
+      MarinaIdleSet_6: -1963399872
+      MarinaIdleSet_7: -1773027486
+      MarinaIdleSet_8: -1705541944
+      MarinaIdleSet_9: 1816028319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
