@@ -2,20 +2,14 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public Item.ItemType itemType; 
+    public Sprite itemSprite; // Assign the item sprite in the Inspector
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player")) // Ensure it's the player
         {
-            GridMovement playerInventory = other.GetComponent<GridMovement>(); 
-            if (playerInventory != null)
-            {
-                playerInventory.AddItemToInventory(itemType);
-                Debug.Log("Picked up:" + itemType);
-
-                Destroy(gameObject); 
-            }
+            InventoryManager.instance.AddItem(itemSprite);
+            Destroy(gameObject); // Remove item from world
         }
     }
 }
