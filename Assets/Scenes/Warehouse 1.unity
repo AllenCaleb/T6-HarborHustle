@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 16094556}
   dialoguePrefab: {fileID: 0}
+  dialoguePrefabA: {fileID: 0}
 --- !u!224 &16094558
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4145,6 +4146,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2128307244}
     m_Modifications:
+    - target: {fileID: 362436922772230964, guid: 3bf8b519f42a28a4687870743c9bd1fe, type: 3}
+      propertyPath: m_Size.y
+      value: 4.1077213
+      objectReference: {fileID: 0}
+    - target: {fileID: 362436922772230964, guid: 3bf8b519f42a28a4687870743c9bd1fe, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.053860664
+      objectReference: {fileID: 0}
     - target: {fileID: 4478036932104699143, guid: 3bf8b519f42a28a4687870743c9bd1fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.726028
@@ -75153,6 +75162,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2128307244}
     m_Modifications:
+    - target: {fileID: 362436922772230964, guid: 3bf8b519f42a28a4687870743c9bd1fe, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4478036932104699143, guid: 3bf8b519f42a28a4687870743c9bd1fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.726028
@@ -79017,7 +79030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5267735947491122631, guid: 78022ca22ce45394bbbed55b00715e76, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
