@@ -22,12 +22,21 @@ public class InventoryManager : MonoBehaviour
         if (!collectedItems.Contains(itemSprite))
         {
             collectedItems.Add(itemSprite);
-            OnInventoryUpdated?.Invoke();  // Notify that the inventory has been updated
+            Debug.Log("Item added to inventory: " + itemSprite.name);
+
+            OnInventoryUpdated?.Invoke(); // Trigger UI Update
         }
     }
 
     public List<Sprite> GetCollectedItems()
     {
+        Debug.Log("Inventory contains " + collectedItems.Count + " items.");
+        foreach (Sprite sprite in collectedItems)
+        {
+            Debug.Log("- " + sprite.name);
+        }
         return collectedItems;
     }
+
+    
 }

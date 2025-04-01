@@ -6,8 +6,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public GameObject inventoryPanel;  // Assign in Inspector
-    public Image[] itemImages;  // Assign UI images in the Inspector
+    public GameObject inventoryPanel; 
+    public Image[] itemImages;  
 
     private void Awake()
     {
@@ -23,29 +23,46 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        InventoryManager.Instance.OnInventoryUpdated += UpdateUI;  // Subscribe to the event
+        InventoryManager.Instance.OnInventoryUpdated += UpdateUI;  
     }
 
     private void OnDisable()
     {
-        InventoryManager.Instance.OnInventoryUpdated -= UpdateUI;  // Unsubscribe to avoid memory leaks
+        InventoryManager.Instance.OnInventoryUpdated -= UpdateUI; 
     }
 
     public void UpdateUI()
     {
+        Debug.Log("UpdateUI called!");
+
+        if (InventoryManager.Instance == null)
+        {
+            Debug.LogError("InventoryManager is NULL in UIManager!");
+            return;
+        }
+
         List<Sprite> items = InventoryManager.Instance.GetCollectedItems();
+        Debug.Log("Updating UI. Items in inventory: " + items.Count);
 
         for (int i = 0; i < itemImages.Length; i++)
         {
             if (i < items.Count)
             {
-                itemImages[i].sprite = items[i];  // Assign sprite to image slot
-                itemImages[i].enabled = true;  // Show the item image
+                Debug.Log($"Setting UI slot {i} with sprite: {items[i].name}");
+
+                itemImages[i].sprite = items[i];  // Assign sprite
+                itemImages[i].enabled = true;    // Enable the Image component
+                itemImages[i].color = Color.white; // Ensure visibility in case of transparency
             }
             else
             {
-                itemImages[i].enabled = false;  // Hide empty slots
+                Debug.Log($"Clearing UI slot {i}");
+                itemImages[i].sprite = null;
+                itemImages[i].enabled = false;
             }
         }
     }
+
+
+
 }
