@@ -90,7 +90,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            Invoke("DeactivateDialogueBox", 2f);  // Set a short delay before deactivating
+            Invoke("DeactivateDialogueBox", 1f);  // Set a short delay before deactivating
         }
     }
 
