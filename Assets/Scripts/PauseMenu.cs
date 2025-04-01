@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;         // Reference to the pause menu UI
     [SerializeField] GameObject dialoguePrefab;    // Reference to the DialoguePrefab GameObject (drag the prefab or the instance here)
     [SerializeField] GameObject dialoguePrefabA;
+    [SerializeField] GameObject dialoguePrefabAd;
 
     public void Pause()
     {
@@ -21,6 +22,11 @@ public class PauseMenu : MonoBehaviour
         if (dialoguePrefabA != null)
         {
             dialoguePrefabA.SetActive(false);
+        }
+
+        if (dialoguePrefabAd != null)
+        {
+            dialoguePrefabAd.SetActive(false);
         }
     }
 
@@ -43,6 +49,11 @@ public class PauseMenu : MonoBehaviour
         if (dialoguePrefabA != null)
         {
             dialoguePrefabA.SetActive(false);
+        }
+
+        if (dialoguePrefabAd != null)
+        {
+            dialoguePrefabAd.SetActive(false);
         }
     }
 
