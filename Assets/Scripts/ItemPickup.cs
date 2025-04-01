@@ -2,14 +2,24 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public Sprite itemSprite;  // Assign this in the Inspector (image representing the item)
+    public Sprite itemSprite; 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))  // If the player collects it
+        if (other.CompareTag("Player"))
         {
-            InventoryManager.Instance.AddItem(itemSprite);  // Pass the sprite to the InventoryManager
-            Destroy(gameObject);  // Destroy the pickup item from the scene
+            Debug.Log("Player collected: " + itemSprite.name);
+
+            if (InventoryManager.Instance != null)
+            {
+                InventoryManager.Instance.AddItem(itemSprite);
+            }
+            else
+            {
+                Debug.LogError("InventoryManager instance is NULL!");
+            }
+
+            Destroy(gameObject); // Remove item from scene
         }
     }
 }
