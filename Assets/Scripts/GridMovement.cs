@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
-    [SerializeField] private UI_Inventory UI_Inventory;
     public float movementSpeed = 5f;
     public Transform movePoint;
     public Inventory inventory;
@@ -13,20 +12,12 @@ public class GridMovement : MonoBehaviour
 
     private void Awake()
     {
-        inventory = new Inventory(); 
+        inventory = new Inventory();  // Initialize the inventory here
     }
 
     void Start()
     {
-        
         movePoint.parent = null;
-
-
-        if (UI_Inventory == null)
-        {
-            Debug.LogError("UI_Inventory reference is missing in GridMovement! Assign it in the Inspector.");
-            return;
-        }
 
         if (inventory == null)
         {
@@ -34,14 +25,12 @@ public class GridMovement : MonoBehaviour
             return;
         }
 
-        UI_Inventory.SetInventory(inventory); 
+        // Set inventory in UIManager for initial UI setup
+        UIManager.Instance.UpdateUI();
     }
-
-
 
     void Update()
     {
-        
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, movementSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
@@ -63,7 +52,7 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    public void AddItemToInventory(Item.ItemType itemType)
+    public void AddItemToInventory(Sprite itemSprite)
     {
         if (inventory == null)
         {
@@ -71,18 +60,10 @@ public class GridMovement : MonoBehaviour
             return;
         }
 
-        inventory.AddItem(new Item { itemType = itemType, amount = 1 });
+        // Add item to the inventory via InventoryManager
+        InventoryManager.Instance.AddItem(itemSprite);  // Update InventoryManager
 
-        // Print current inventory contents
-        Debug.Log("Added " + itemType + " to inventory.");
-        Debug.Log("Current Inventory Items:");
-        foreach (Item item in inventory.GetItems())
-        {
-            Debug.Log("- " + item.itemType);
-        }
-
-        UI_Inventory.SetInventory(inventory); 
+        // Optionally, update UI immediately
+        UIManager.Instance.UpdateUI();  // Refresh the UI to reflect the new item
     }
-
 }
-
