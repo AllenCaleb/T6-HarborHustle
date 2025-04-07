@@ -4099,6 +4099,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3713536127365098935, guid: ee20d6056d33cdc4686d539967a42f5a, type: 3}
+      propertyPath: m_Size.y
+      value: 5.1601954
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713536127365098935, guid: ee20d6056d33cdc4686d539967a42f5a, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5800977
+      objectReference: {fileID: 0}
     - target: {fileID: 5266620478216624803, guid: ee20d6056d33cdc4686d539967a42f5a, type: 3}
       propertyPath: m_SortingOrder
       value: 4
