@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class InventoryToggle : MonoBehaviour
 {
-    [SerializeField] private GameObject inventoryUI; // Reference to the inventory UI 
-    private bool isInventoryVisible = false;  // Track whether inventory is visible
+    public GameObject inventoryUI;
+    private bool isOpen = false;
+
+    void Start()
+    {
+        if (inventoryUI != null)
+        {
+            inventoryUI.SetActive(false); // Explicitly hide on start
+        }
+    }
 
     void Update()
     {
-        // Toggle inventory visibility when the "I" key is pressed
         if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory();
@@ -16,7 +23,7 @@ public class InventoryToggle : MonoBehaviour
 
     void ToggleInventory()
     {
-        isInventoryVisible = !isInventoryVisible;  
-        inventoryUI.SetActive(isInventoryVisible); 
+        isOpen = !isOpen;
+        inventoryUI.SetActive(isOpen);
     }
 }
