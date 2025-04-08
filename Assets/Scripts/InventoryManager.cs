@@ -6,6 +6,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance; // Singleton reference
     public event Action OnInventoryUpdated;
+
     private List<Sprite> collectedItems = new List<Sprite>();
 
     private void Awake()
@@ -13,6 +14,7 @@ public class InventoryManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Keep across scenes
             Debug.Log("InventoryManager Instance is set.");
         }
         else
@@ -35,5 +37,10 @@ public class InventoryManager : MonoBehaviour
     public List<Sprite> GetCollectedItems()
     {
         return collectedItems;
+    }
+
+    public bool HasItem(Sprite itemSprite)
+    {
+        return collectedItems.Contains(itemSprite);
     }
 }
