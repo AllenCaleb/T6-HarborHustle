@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private Animator animator;
 
+    // For pushing crates
+    private Rigidbody2D crateRb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,10 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-       
+        // Ensure diagonal movement is not too fast
         if (moveInput.x != 0 && moveInput.y != 0)
         {
-            
             if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
             {
                 moveInput = new Vector2(moveInput.x, 0);
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // Apply player movement
         rb.velocity = moveInput * moveSpeed;
     }
 
@@ -49,6 +52,30 @@ public class PlayerMovement : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
         animator.SetFloat("InputX", moveInput.x);
         animator.SetFloat("InputY", moveInput.y);
-
     }
+
+   /* void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the object collided with has the "crate" tag
+        if (collision.gameObject.CompareTag("Crate"))
+        {
+            crateRb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            // If the crate has a Rigidbody2D, apply force to it in the direction the player is moving
+            if (crateRb != null)
+            {
+                Vector2 pushDirection = moveInput.normalized; // Direction the player is moving in
+                crateRb.velocity = pushDirection * moveSpeed; // Push the crate in that direction
+            }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        // Reset crate when no longer in contact with the player
+        if (collision.gameObject.CompareTag("Crate"))
+        {
+            crateRb = null;
+        }
+    }*/
 }
