@@ -22,6 +22,8 @@ public class NPCInteraction : MonoBehaviour
                 {
                     InventoryManager.Instance.RemoveItem(requiredItem);
                     dialogueScript.StartDialogue(successMessage);
+                    ObjectiveManager.Instance.RemoveObjective(objectiveMessage);
+
                 }
                 else
                 {
