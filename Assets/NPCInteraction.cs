@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour
 {
@@ -7,39 +7,42 @@ public class NPCInteraction : MonoBehaviour
     public Sprite requiredItem;
     [TextArea] public string successMessage = "Thanks for bringing the item!";
     [TextArea] public string failMessage = "You don't have what I need.";
-    
+
+    [TextArea] public string objectiveMessage = "Collect 3 Fish for the fisherman.";
+
+    private bool objectiveGiven = false;
 
     void Update()
     {
-        // Check for player input (e.g., pressing 'E' to interact)
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             if (dialogueScript != null)
             {
-                
-
-                // First, check if the player has the required item
                 if (InventoryManager.Instance.HasItem(requiredItem))
                 {
-                    // Player has the required item, give it to the NPC
                     InventoryManager.Instance.RemoveItem(requiredItem);
-                    dialogueScript.StartDialogue(successMessage); // Show success message
+                    dialogueScript.StartDialogue(successMessage);
+                    ObjectiveManager.Instance.RemoveObjective(objectiveMessage);
+
                 }
                 else
                 {
-                    // Player doesn't have the required item, show alternative message
-                    dialogueScript.StartDialogue(failMessage); // Show alternative message
+                    dialogueScript.StartDialogue(failMessage);
                 }
 
                 
-               
-            }
-            else
-            {
-                Debug.LogError("Dialogue script is not assigned!");
+
+                // Prevents objective Spamming
+                if (!objectiveGiven && !string.IsNullOrEmpty(objectiveMessage))
+                {
+                    ObjectiveManager.Instance.AddObjective(objectiveMessage);
+                    objectiveGiven = true;
+                }
             }
         }
     }
+
+
 
     // When the player enters the trigger area
     private void OnTriggerEnter2D(Collider2D other)
@@ -58,4 +61,5 @@ public class NPCInteraction : MonoBehaviour
             playerInRange = false;  // Player is no longer in range to interact
         }
     }
+
 }
