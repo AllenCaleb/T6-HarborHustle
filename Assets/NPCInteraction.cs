@@ -31,8 +31,7 @@ public class NPCInteraction : MonoBehaviour
                     dialogueScript.StartDialogue(failMessage); // Show alternative message
                 }
 
-                
-               
+
             }
             else
             {
