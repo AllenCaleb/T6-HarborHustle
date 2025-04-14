@@ -1,101 +1,68 @@
+﻿using UnityEngine;
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
-    public GameObject dialogueCanvas;
-    public string[] lines;
-    public float textSpeed;
+    public GameObject dialoguePanel;
+    public TextMeshProUGUI dialogueText; // Or use `Text` if not using TMP
+    public float autoHideTime = 3f;      // Time before hiding dialogue
+    private Queue<string> dialogueQueue = new Queue<string>();  // Queue to store dialogues
+    private Coroutine hideRoutine;
 
-    private int index;
-    private bool isTyping = false; // Prevents multiple clicks during typing
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        textComponent.text = string.Empty;
-        dialogueCanvas.SetActive(false);
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
     }
 
-    void Update()
+    // Start dialogue with a message
+    public void StartDialogue(string message)
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (dialoguePanel == null || dialogueText == null)
         {
-            if (lines == null || lines.Length == 0)
-            {
-                Debug.LogError("Dialogue lines are empty or not assigned!");
-                return;
-            }
-
-            if (index < 0 || index >= lines.Length)
-            {
-                Debug.LogError($"Index {index} is out of bounds! Lines length: {lines.Length}");
-                return;
-            }
-
-            if (isTyping) // If typing is in progress, complete the line instantly
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-                isTyping = false; // Reset flag after finishing
-            }
-            else // Otherwise, go to the next line
-            {
-                NextLine();
-            }
-        }
-    }
-
-    public void StartDialogue()
-    {
-        dialogueCanvas.SetActive(true);
-        if (lines == null || lines.Length == 0)
-        {
-            Debug.LogError("Dialogue lines are empty or not assigned!");
-            lines = new string[] { "Default dialogue line." };
-            return;
-        }
-        index = 0;
-        StartCoroutine(TypeLine());
-    }
-
-    IEnumerator TypeLine()
-    {
-        textComponent.text = string.Empty;  // Ensure text is cleared before starting typing
-        foreach (char c in lines[index].ToCharArray())
-        {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
-        }
-
-        isTyping = false;  // Mark typing as finished
-    }
-
-    void NextLine()
-    {
-        if (lines == null || lines.Length == 0)
-        {
-            Debug.LogError("Dialogue lines are empty or not assigned!");
-            gameObject.SetActive(false);
+            Debug.LogWarning("Dialogue panel or text is not assigned.");
             return;
         }
 
-        if (index < lines.Length - 1)
+        // Add the new message to the queue
+        dialogueQueue.Enqueue(message);
+
+        // If the dialogue box is not already showing, start displaying it
+        if (!dialoguePanel.activeSelf)
         {
-            index++;
-            StartCoroutine(TypeLine());
+            ShowNextMessage();
+        }
+    }
+
+    // Display the next message in the queue
+    private void ShowNextMessage()
+    {
+        if (dialogueQueue.Count > 0)
+        {
+            // Show the next message from the queue
+            string nextMessage = dialogueQueue.Dequeue();
+            dialogueText.text = nextMessage;
+            dialoguePanel.SetActive(true);
+
+            // Restart the hide timer
+            if (hideRoutine != null)
+                StopCoroutine(hideRoutine);
+
+            hideRoutine = StartCoroutine(HideDialogueAfterDelay(autoHideTime));
         }
         else
         {
-            Invoke("DeactivateDialogueBox", 1f);  // Set a short delay before deactivating
+            // If no more messages are left, hide the panel
+            dialoguePanel.SetActive(false);
         }
     }
 
-    void DeactivateDialogueBox()
+    // Coroutine to hide the dialogue after a delay
+    private IEnumerator HideDialogueAfterDelay(float delay)
     {
-        dialogueCanvas.SetActive(false);
+        yield return new WaitForSeconds(delay);
+        ShowNextMessage();
     }
 }

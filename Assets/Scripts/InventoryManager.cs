@@ -33,6 +33,20 @@ public class InventoryManager : MonoBehaviour
             OnInventoryUpdated?.Invoke();
         }
     }
+    public void RemoveItem(Sprite itemSprite)
+    {
+        if (collectedItems.Contains(itemSprite))
+        {
+            collectedItems.Remove(itemSprite);
+            Debug.Log("Item removed from inventory: " + itemSprite.name);
+            OnInventoryUpdated?.Invoke();
+        }
+        else
+        {
+            Debug.LogWarning("Attempted to remove item that isn't in inventory: " + itemSprite.name);
+        }
+    }
+
 
     public List<Sprite> GetCollectedItems()
     {

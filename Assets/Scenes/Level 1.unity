@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a2ad6dfb8e99b4ba2da80ab6a1d49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCollectibles: 1
+  totalCollectibles: 0
   EndPoint: {fileID: 17882391}
   GameEndUi: {fileID: 1665129721}
 --- !u!212 &17882393
@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 17882391}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0143, y: 20.8106, z: 0}
+  m_LocalPosition: {x: 2.0000002, y: -2, z: 0}
   m_LocalScale: {x: 1.0287235, y: 2.3405704, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -261,7 +261,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.29330325, y: 0.4764086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -272,7 +272,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 11.32925, y: 1.952817}
   m_EdgeRadius: 0
 --- !u!50 &17882396
 Rigidbody2D:
@@ -299,7 +299,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &35316026
 GameObject:
@@ -4438,6 +4438,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398210586}
   m_CullTransparentMesh: 1
+--- !u!1 &481383356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847815347546408042, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+  m_PrefabInstance: {fileID: 1657816087379322704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6077,6 +6082,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085618419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7331563201037372362, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+  m_PrefabInstance: {fileID: 1657816087379322704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1090742936
 GameObject:
   m_ObjectHideFlags: 0
@@ -107298,6 +107314,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1148412177809624816, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -563.527
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148412177809624816, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 170.03848
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: failMessage
+      value: "Hello, Sailor we have lost our documents. \nSee if you can find them
+        and bring them back.\nGood Luck!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: requiredItem
+      value: 
+      objectReference: {fileID: -1203886472, guid: 9e0c89bf35108ef4bbe96a6ee2170a1b, type: 3}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: normalDialogue
+      value: 'Hello, adventurer. Can we have lost our documents find them and bring
+        them back.
+
+        Hurry!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: successMessage
+      value: 'Well done Sailor!
+
+        now to head to the stern for docking'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3410067572313089228, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 75.13058
+      objectReference: {fileID: 0}
     - target: {fileID: 4091530412611120330, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -107318,6 +107368,18 @@ PrefabInstance:
       propertyPath: textSpeed
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 6239731914745889584, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: autoHideTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239731914745889584, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1085618419}
+    - target: {fileID: 6239731914745889584, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 481383356}
     - target: {fileID: 7330501002223085594, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 64
@@ -107327,8 +107389,18 @@ PrefabInstance:
       value: -309
       objectReference: {fileID: 0}
     - target: {fileID: 7331563201037372362, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: m_text
+      value: 'hello sailor
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331563201037372362, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
       propertyPath: m_fontSize
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331563201037372362, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: m_margin.w
+      value: -93.71969
       objectReference: {fileID: 0}
     - target: {fileID: 7331563201037372362, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
       propertyPath: m_fontSizeBase
