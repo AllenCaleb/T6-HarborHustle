@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
@@ -23,8 +23,16 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        InventoryManager.Instance.OnInventoryUpdated += UpdateUI;  
+        if (InventoryManager.Instance == null)
+        {
+            Debug.LogError("InventoryManager Instance is NULL in UIManager! Make sure it's in the scene.");
+            return;
+        }
+
+        Debug.Log("Subscribing to OnInventoryUpdated.");
+        InventoryManager.Instance.OnInventoryUpdated += UpdateUI;
     }
+
 
     private void OnDisable()
     {
@@ -49,10 +57,9 @@ public class UIManager : MonoBehaviour
             if (i < items.Count)
             {
                 Debug.Log($"Setting UI slot {i} with sprite: {items[i].name}");
-
-                itemImages[i].sprite = items[i];  // Assign sprite
-                itemImages[i].enabled = true;    // Enable the Image component
-                itemImages[i].color = Color.white; // Ensure visibility in case of transparency
+                itemImages[i].sprite = items[i];
+                itemImages[i].enabled = true;
+                itemImages[i].color = Color.white;
             }
             else
             {
@@ -62,6 +69,7 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
 
 
 

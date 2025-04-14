@@ -8,6 +8,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;         // Reference to the pause menu UI
     [SerializeField] GameObject dialoguePrefab;    // Reference to the DialoguePrefab GameObject (drag the prefab or the instance here)
     [SerializeField] GameObject dialoguePrefabA;
+    [SerializeField] GameObject dialoguePrefabAd;
+    [SerializeField] GameObject dialoguePrefabG;
+    [SerializeField] GameObject dialoguePrefabUSS;
+    [SerializeField] GameObject dialoguePrefabUSS2;
 
     public void Pause()
     {
@@ -21,6 +25,27 @@ public class PauseMenu : MonoBehaviour
         if (dialoguePrefabA != null)
         {
             dialoguePrefabA.SetActive(false);
+        }
+
+        if (dialoguePrefabAd != null)
+        {
+            dialoguePrefabAd.SetActive(false);
+        }
+
+        if (dialoguePrefabG != null)
+        {
+            dialoguePrefabG.SetActive(false);
+        }
+
+        if (dialoguePrefabUSS != null)
+        {
+            dialoguePrefabUSS.SetActive(false);
+        }
+
+
+        if (dialoguePrefabUSS2 != null)
+        {
+            dialoguePrefabUSS2.SetActive(false);
         }
     }
 
@@ -43,6 +68,27 @@ public class PauseMenu : MonoBehaviour
         if (dialoguePrefabA != null)
         {
             dialoguePrefabA.SetActive(false);
+        }
+
+        if (dialoguePrefabAd != null)
+        {
+            dialoguePrefabAd.SetActive(false);
+        }
+
+        if (dialoguePrefabG != null)
+        {
+            dialoguePrefabG.SetActive(false);
+        }
+
+        if (dialoguePrefabUSS != null)
+        {
+            dialoguePrefabUSS.SetActive(false);
+        }
+
+
+        if (dialoguePrefabUSS2 != null)
+        {
+            dialoguePrefabUSS2.SetActive(false);
         }
     }
 

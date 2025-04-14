@@ -59,7 +59,8 @@ public class PlayerPush : MonoBehaviour
                 selectedOffset = offsetRight;
             }
 
-            if (hitObject != null)
+            if (hitObject != null && hitObject.CompareTag("Pushable"))
+
             {
                 box = hitObject;
                 var joint = box.GetComponent<FixedJoint2D>();
