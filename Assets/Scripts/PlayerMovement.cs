@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("InputY", moveInput.y);
     }
 
-   /* void OnCollisionEnter2D(Collision2D collision)
+  /*  void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the object collided with has the "crate" tag
         if (collision.gameObject.CompareTag("Crate"))
@@ -77,5 +77,5 @@ public class PlayerMovement : MonoBehaviour
         {
             crateRb = null;
         }
-    }*/
+    } */
 }

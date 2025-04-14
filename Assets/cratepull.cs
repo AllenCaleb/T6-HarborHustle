@@ -17,18 +17,18 @@ public class cratepull : MonoBehaviour
     }
 
     // Update is called once per frame
-   /* void Update()
-    {
+    void Update() { }
+  /*  {
         if (beingPushed == false)
         {
-            transform.position = new Vector3 (xPos, transform.position.y);
+            transform.position = new Vector3(xPos, transform.position.y);
         }
         else
         {
             xPos = transform.position.x;
         }
 
-        if(beingPushed == false)
+        if (beingPushed == false)
         {
             transform.position = new Vector3(yPos, transform.position.x);
         }
@@ -36,5 +36,5 @@ public class cratepull : MonoBehaviour
         {
             yPos = transform.position.y;
         }
-    }*/
+    } */
 }
