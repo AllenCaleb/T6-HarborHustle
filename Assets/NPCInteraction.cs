@@ -1,20 +1,13 @@
-using System.Collections;
 using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour
 {
     private bool playerInRange = false;  // Track if the player is in range
     public Dialogue dialogueScript;  // Reference to the Dialogue script on the NPC
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //// Make sure the dialogue is not showing at the start
-        //if (dialogueScript != null)
-        //{
-        //    dialogueScript.gameObject.SetActive(false);  // Ensure the dialogue box is hidden initially
-        //}
-    }
+    public Sprite requiredItem;
+    [TextArea] public string successMessage = "Thanks for bringing the item!";
+    [TextArea] public string failMessage = "You don't have what I need.";
+    
 
     void Update()
     {
@@ -23,7 +16,27 @@ public class NPCInteraction : MonoBehaviour
         {
             if (dialogueScript != null)
             {
-                dialogueScript.StartDialogue();  // Start the dialogue
+                
+
+                // First, check if the player has the required item
+                if (InventoryManager.Instance.HasItem(requiredItem))
+                {
+                    // Player has the required item, give it to the NPC
+                    InventoryManager.Instance.RemoveItem(requiredItem);
+                    dialogueScript.StartDialogue(successMessage); // Show success message
+                }
+                else
+                {
+                    // Player doesn't have the required item, show alternative message
+                    dialogueScript.StartDialogue(failMessage); // Show alternative message
+                }
+
+                
+               
+            }
+            else
+            {
+                Debug.LogError("Dialogue script is not assigned!");
             }
         }
     }
@@ -46,4 +59,3 @@ public class NPCInteraction : MonoBehaviour
         }
     }
 }
-
