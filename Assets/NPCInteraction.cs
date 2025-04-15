@@ -20,7 +20,7 @@ public class NPCInteraction : MonoBehaviour
 
     void Start()
     {
-        // On scene load, check if the item should already be revealed
+        // Check if the item should already be revealed when the scene loads
         if (!string.IsNullOrEmpty(revealKey) && PlayerPrefs.GetInt(revealKey, 0) == 1)
         {
             if (itemToReveal != null)
@@ -36,23 +36,30 @@ public class NPCInteraction : MonoBehaviour
             {
                 if (InventoryManager.Instance.HasItem(requiredItem))
                 {
+                    // Remove the required item from the inventory
                     InventoryManager.Instance.RemoveItem(requiredItem);
+
+                    // Start the success dialogue
                     dialogueScript.StartDialogue(successMessage);
+
+                    // Remove the objective after it's completed
                     ObjectiveManager.Instance.RemoveObjective(objectiveMessage);
                 }
                 else
                 {
+                    // Start the fail dialogue
                     dialogueScript.StartDialogue(failMessage);
 
-                    // Only reveal item once
+                    // Only reveal the item once
                     if (itemToReveal != null && PlayerPrefs.GetInt(revealKey, 0) == 0)
                     {
                         itemToReveal.SetActive(true);
-                        PlayerPrefs.SetInt(revealKey, 1); // Save that it's been revealed
+                        PlayerPrefs.SetInt(revealKey, 1); // Save that the item was revealed
                         PlayerPrefs.Save(); // Ensure it's written to disk
                     }
                 }
 
+                // Add the objective if it hasn't been added already
                 if (!objectiveGiven && !string.IsNullOrEmpty(objectiveMessage))
                 {
                     ObjectiveManager.Instance.AddObjective(objectiveMessage);
