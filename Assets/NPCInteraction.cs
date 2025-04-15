@@ -2,15 +2,20 @@
 
 public class NPCInteraction : MonoBehaviour
 {
-    private bool playerInRange = false;  // Track if the player is in range
-    public Dialogue dialogueScript;  // Reference to the Dialogue script on the NPC
+    private bool playerInRange = false;
+    public Dialogue dialogueScript;
     public Sprite requiredItem;
+
+    [Header("Dialogue Messages")]
     [TextArea] public string successMessage = "Thanks for bringing the item!";
     [TextArea] public string failMessage = "You don't have what I need.";
-
     [TextArea] public string objectiveMessage = "Collect 3 Fish for the fisherman.";
 
     private bool objectiveGiven = false;
+
+    [Header("Item Reveal On Fail")]
+    public GameObject itemToReveal; // Item to show when player fails
+    private bool itemRevealedOnFail = false;
 
     void Update()
     {
@@ -23,16 +28,20 @@ public class NPCInteraction : MonoBehaviour
                     InventoryManager.Instance.RemoveItem(requiredItem);
                     dialogueScript.StartDialogue(successMessage);
                     ObjectiveManager.Instance.RemoveObjective(objectiveMessage);
-
                 }
                 else
                 {
                     dialogueScript.StartDialogue(failMessage);
+
+                    // ✅ Only reveal the item once during fail
+                    if (!itemRevealedOnFail && itemToReveal != null)
+                    {
+                        itemToReveal.SetActive(true);
+                        itemRevealedOnFail = true;
+                    }
                 }
 
-                
-
-                // Prevents objective Spamming
+                // Prevents repeating the same objective
                 if (!objectiveGiven && !string.IsNullOrEmpty(objectiveMessage))
                 {
                     ObjectiveManager.Instance.AddObjective(objectiveMessage);
@@ -42,24 +51,19 @@ public class NPCInteraction : MonoBehaviour
         }
     }
 
-
-
-    // When the player enters the trigger area
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = true;  // Player is within range to interact
+            playerInRange = true;
         }
     }
 
-    // When the player leaves the trigger area
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = false;  // Player is no longer in range to interact
+            playerInRange = false;
         }
     }
-
 }
