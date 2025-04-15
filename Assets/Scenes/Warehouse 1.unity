@@ -2985,6 +2985,10 @@ PrefabInstance:
 '
       objectReference: {fileID: 0}
     - target: {fileID: 7924913894799680283, guid: 47e8b28923a48c946933957dee529f48, type: 3}
+      propertyPath: itemToReveal
+      value: 
+      objectReference: {fileID: 1300005112802316688}
+    - target: {fileID: 7924913894799680283, guid: 47e8b28923a48c946933957dee529f48, type: 3}
       propertyPath: requiredItem
       value: 
       objectReference: {fileID: 1922682951, guid: 6392e2f87d3c7d840a8006598711e0dc, type: 3}
@@ -81252,6 +81256,10 @@ PrefabInstance:
     - target: {fileID: 442332755581303192, guid: 276d0adc58872ba4386c6d11303ea9ce, type: 3}
       propertyPath: m_Name
       value: Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 442332755581303192, guid: 276d0adc58872ba4386c6d11303ea9ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3476542809589225831, guid: 276d0adc58872ba4386c6d11303ea9ce, type: 3}
       propertyPath: m_LocalPosition.x
