@@ -17,19 +17,36 @@ public class EndGameManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GridMovement gridMovement = other.gameObject.GetComponent<GridMovement>();
-            List<Item> inventoryitems = gridMovement.inventory.GetItems();
-            ItemType itemToFind = Item.ItemType.Docs;
+            Debug.Log("Player has entered the trigger!");
 
-            for (int i = 0; i < inventoryitems.Count; i++)
+            // Get GridMovement component from player
+            GridMovement gridMovement = other.gameObject.GetComponent<GridMovement>();
+            if (gridMovement == null)
             {
-                if (inventoryitems[i].itemType == itemToFind)
+                Debug.LogError("GridMovement not found on Player object!");
+                return;
+            }
+
+            // Check if inventory is null or empty
+            if (gridMovement.inventory == null || gridMovement.inventory.GetItems().Count == 0)
+            {
+                Debug.Log("Player inventory is empty! Triggering Game Over.");
+                GameOver();
+            }
+            else
+            {
+                // If inventory is not empty, log the items in inventory
+                Debug.Log("Player's inventory is not empty.");
+                List<Item> inventoryItems = gridMovement.inventory.GetItems();
+                foreach (var item in inventoryItems)
                 {
-                    GameOver();
+                    Debug.Log($"Item in inventory: {item.itemType}");
                 }
             }
         }
     }
+
+
 
     public void GameOver()
     {

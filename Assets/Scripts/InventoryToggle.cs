@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class InventoryToggle : MonoBehaviour
 {
-    public GameObject inventoryUI;
+    public GameObject UI_Inventory;
     private bool isOpen = false;
 
     void Start()
     {
-        if (inventoryUI != null)
+        if (UI_Inventory != null)
         {
-            inventoryUI.SetActive(false); // Explicitly hide on start
+            UI_Inventory.SetActive(false); // Explicitly hide on start
         }
     }
 
@@ -24,6 +24,6 @@ public class InventoryToggle : MonoBehaviour
     void ToggleInventory()
     {
         isOpen = !isOpen;
-        inventoryUI.SetActive(isOpen);
+        UI_Inventory.SetActive(isOpen);
     }
 }
