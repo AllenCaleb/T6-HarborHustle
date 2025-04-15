@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // Add this for scene management
 
 public class ItemReveal : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class ItemReveal : MonoBehaviour
     public string revealKey = "FishermanFailItemRevealed";  // Make this editable in Inspector
     [Tooltip("The item GameObject to reveal when conditions are met.")]
     public GameObject item;  // Allow the item to be assigned directly in the Inspector
+
+    private bool isRevealed = false;  // Local state for the item reveal
 
     void Start()
     {
@@ -17,36 +20,32 @@ public class ItemReveal : MonoBehaviour
             return;
         }
 
-        // Check PlayerPrefs to see if the item should be revealed
-        if (PlayerPrefs.GetInt(revealKey, 0) == 1)
-        {
-            item.SetActive(true);  // Reveal the item
-        }
-        else
-        {
-            item.SetActive(false);  // Keep the item hidden
-        }
+        // Initially hide the item
+        item.SetActive(false);
+
+        // If conditions are met, reveal the item (For now this could be based on a trigger or event)
+        // Example condition: when the NPC interaction is successful, you can reveal the item
     }
 
     // Optionally, you could also expose a public method to manually reveal the item if needed
     public void RevealItem()
     {
-        if (item != null)
+        if (item != null && !isRevealed)
         {
-            item.SetActive(true); // Make item visible
-            PlayerPrefs.SetInt(revealKey, 1);  // Mark as revealed in PlayerPrefs
-            PlayerPrefs.Save();  // Save to disk
+            item.SetActive(true);  // Make item visible
+            isRevealed = true;     // Mark as revealed for this scene only
+            Debug.Log($"Item revealed in the current scene.");
         }
     }
 
     // Optionally, a method to reset the item reveal (for testing or other purposes)
     public void ResetItemReveal()
     {
-        if (item != null)
+        if (item != null && isRevealed)
         {
             item.SetActive(false); // Hide the item again
-            PlayerPrefs.SetInt(revealKey, 0);  // Mark as not revealed in PlayerPrefs
-            PlayerPrefs.Save();  // Save to disk
+            isRevealed = false;    // Mark as not revealed for this scene
+            Debug.Log($"Item reveal reset in the current scene.");
         }
     }
 }

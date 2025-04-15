@@ -38,6 +38,7 @@ public class ObjectiveManager : MonoBehaviour
             objectives.Add(newObjective);
             Debug.Log("Objective added: " + newObjective);
 
+            // Only update if the panel is visible
             if (isVisible)
             {
                 UpdateObjectiveText();
@@ -52,6 +53,7 @@ public class ObjectiveManager : MonoBehaviour
             objectives.Remove(objectiveToRemove);
             Debug.Log("Objective removed: " + objectiveToRemove);
 
+            // Only update if the panel is visible
             if (isVisible)
             {
                 UpdateObjectiveText();
@@ -67,6 +69,7 @@ public class ObjectiveManager : MonoBehaviour
         {
             objectivePanel.SetActive(isVisible);
 
+            // Only update the text if the panel is being opened (avoiding redundant updates)
             if (isVisible)
             {
                 UpdateObjectiveText();
@@ -84,17 +87,21 @@ public class ObjectiveManager : MonoBehaviour
         }
         else
         {
-            objectiveText.text = "Objectives:\n";
+            // Use StringBuilder for more efficient text building
+            var objectiveListText = new System.Text.StringBuilder("Objectives:\n");
+
             foreach (var obj in objectives)
             {
-                objectiveText.text += "• " + obj + "\n";
+                objectiveListText.AppendLine("• " + obj);
             }
+
+            objectiveText.text = objectiveListText.ToString();
         }
     }
 
     public void ClearAllObjectives()
     {
         objectives.Clear();
-        UpdateObjectiveText();
+        UpdateObjectiveText(); // Updates the UI when all objectives are cleared
     }
 }

@@ -23,7 +23,14 @@ public class InventoryToggle : MonoBehaviour
 
     void ToggleInventory()
     {
+        if (UI_Inventory == null)
+        {
+            Debug.LogWarning("UI_Inventory has been destroyed or is missing.");
+            return;
+        }
+
         isOpen = !isOpen;
         UI_Inventory.SetActive(isOpen);
     }
+
 }
