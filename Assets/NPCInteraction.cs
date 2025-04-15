@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPCInteraction : MonoBehaviour
 {
@@ -13,9 +14,19 @@ public class NPCInteraction : MonoBehaviour
 
     private bool objectiveGiven = false;
 
-    [Header("Item Reveal On Fail")]
-    public GameObject itemToReveal; // Item to show when player fails
-    private bool itemRevealedOnFail = false;
+    [Header("Persistent Item Reveal")]
+    public GameObject itemToReveal;
+    public string revealKey = "FishermanFailItemRevealed"; // Unique key for this item
+
+    void Start()
+    {
+        // On scene load, check if the item should already be revealed
+        if (!string.IsNullOrEmpty(revealKey) && PlayerPrefs.GetInt(revealKey, 0) == 1)
+        {
+            if (itemToReveal != null)
+                itemToReveal.SetActive(true);
+        }
+    }
 
     void Update()
     {
@@ -33,15 +44,15 @@ public class NPCInteraction : MonoBehaviour
                 {
                     dialogueScript.StartDialogue(failMessage);
 
-                    // ✅ Only reveal the item once during fail
-                    if (!itemRevealedOnFail && itemToReveal != null)
+                    // Only reveal item once
+                    if (itemToReveal != null && PlayerPrefs.GetInt(revealKey, 0) == 0)
                     {
                         itemToReveal.SetActive(true);
-                        itemRevealedOnFail = true;
+                        PlayerPrefs.SetInt(revealKey, 1); // Save that it's been revealed
+                        PlayerPrefs.Save(); // Ensure it's written to disk
                     }
                 }
 
-                // Prevents repeating the same objective
                 if (!objectiveGiven && !string.IsNullOrEmpty(objectiveMessage))
                 {
                     ObjectiveManager.Instance.AddObjective(objectiveMessage);
