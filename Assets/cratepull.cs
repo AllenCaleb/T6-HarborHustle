@@ -5,7 +5,7 @@ using UnityEngine;
 public class cratepull : MonoBehaviour
 {
 
-    public bool beingPushed;
+/*    public bool beingPushed;
     float xPos;
     float yPos;
 
@@ -17,8 +17,8 @@ public class cratepull : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() { }
-  /*  {
+    void Update() 
+   {
         if (beingPushed == false)
         {
             transform.position = new Vector3(xPos, transform.position.y);
