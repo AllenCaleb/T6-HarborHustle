@@ -1,74 +1,52 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; 
+    public static GameManager Instance;
 
-    public int collectedItems = 0; 
-    public Vector3[] boxPositions;
+    // A list to store positions (assuming Vector3 positions)
+    public Vector3[] boxPositions; // Changed from List<Vector3> to Vector3[] array
 
+    public List<Sprite> unlockedItems = new List<Sprite>();
+    public bool isObjectiveCompleted = false; // This will track if the objective is completed.
 
     private void Awake()
     {
-      
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject); // Keep across scenes
         }
         else
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 
-    
-    public void SaveBoxPositions()
+    // Call this to unlock an item
+    public void UnlockItem(Sprite item)
     {
-        GameObject[] boxObjects = GameObject.FindGameObjectsWithTag("Box");
-
-        if (boxObjects.Length == 0)
+        if (!unlockedItems.Contains(item))
         {
-            Debug.LogWarning("No boxes found to save positions!");
-            return;
+            unlockedItems.Add(item);
+            Debug.Log("Item unlocked: " + item.name);
         }
-
-        boxPositions = new Vector3[boxObjects.Length];
-
-        for (int i = 0; i < boxObjects.Length; i++)
-        {
-            boxPositions[i] = boxObjects[i].transform.position;
-        }
-
-        Debug.Log("Box positions saved!");
     }
 
-    
-    public void RestoreBoxPositions()
+    // Call this when the objective is complete
+    public void CompleteObjective()
     {
-        GameObject[] boxObjects = GameObject.FindGameObjectsWithTag("Box");
-
-        if (boxPositions == null || boxPositions.Length != boxObjects.Length)
-        {
-            Debug.LogWarning("No valid saved box positions found or mismatch in box count!");
-            return;
-        }
-
-        for (int i = 0; i < boxObjects.Length; i++)
-        {
-            boxObjects[i].transform.position = boxPositions[i];
-        }
-
-        Debug.Log("Box positions restored!");
+        isObjectiveCompleted = true;
+        Debug.Log("Objective completed!");
     }
 
-    
+    // Reset all the game data (unlock items and objectives)
     public void ResetData()
     {
-        collectedItems = 0;
-        boxPositions = new Vector3[0]; 
-        Debug.Log("Game data reset!");
+        unlockedItems.Clear(); // Clear the list of unlocked items
+        isObjectiveCompleted = false; // Reset the objective completion status
+        boxPositions = new Vector3[0]; // Reset the array if needed
+        Debug.Log("Game data has been reset.");
     }
-  
 }
