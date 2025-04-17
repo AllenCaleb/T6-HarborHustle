@@ -6766,6 +6766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  detectionRadius: 1
+  footstepSpeed: 0.5
 --- !u!114 &1260889433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7459,54 +7461,7 @@ MonoBehaviour:
   soundEffectGroups:
   - name: Footstep
     audioClips:
-    - {fileID: 8300000, guid: 1ad23e2c7c09e9b43889fc66267432b4, type: 3}
-    - {fileID: 8300000, guid: 7ad422b6185df744ba5c01e2e3256aa9, type: 3}
-    - {fileID: 8300000, guid: 951506d39573084498f34a7ed9840ada, type: 3}
-    - {fileID: 8300000, guid: 899df3e91c4d0a742b2832979ec21b7e, type: 3}
-    - {fileID: 8300000, guid: 3825eb7339a1345479528891c6d1745e, type: 3}
-    - {fileID: 8300000, guid: 4fdb14b99d27c884e9bfce4bc849f362, type: 3}
-    - {fileID: 8300000, guid: 137191c8127983948892b445402807b1, type: 3}
-    - {fileID: 8300000, guid: b5cd2dedf318cb44bb6515f79ff6f7ae, type: 3}
-    - {fileID: 8300000, guid: 45d87b8d7bb3dab48bd0824706c0b09d, type: 3}
-    - {fileID: 8300000, guid: e9eb628bf71960241a36c93138d9f625, type: 3}
-    - {fileID: 8300000, guid: d44e0060ba2c64145b7913fb977a8167, type: 3}
-    - {fileID: 8300000, guid: 1c913636a8809b3409b0ae7edfbe0ee1, type: 3}
-    - {fileID: 8300000, guid: e0231ab52de9dd24d97acd05661c6a24, type: 3}
-    - {fileID: 8300000, guid: 3bb358925de8b8a49bc0e2d6a0e65bfd, type: 3}
-    - {fileID: 8300000, guid: a4fc930ac24a9a348be430b61d099ea5, type: 3}
-    - {fileID: 8300000, guid: 8582ccbcba9007f4a9eaf6307966fbc2, type: 3}
-    - {fileID: 8300000, guid: 2862557a452e9f742b2ab55a1c952b30, type: 3}
-    - {fileID: 8300000, guid: e157b1842b3d12e4d9737f37eff8b667, type: 3}
-    - {fileID: 8300000, guid: 0266a01bdca1efb4b9ed2b9eda16e928, type: 3}
-    - {fileID: 8300000, guid: 63ed80f8f35149847bdaffa0836c1166, type: 3}
-    - {fileID: 8300000, guid: 8b16c186f5e29dd4c8b256de9e3981c5, type: 3}
-  - name: FootstepsBoat
-    audioClips:
-    - {fileID: 8300000, guid: f0fbe7c363058d8489406f5f8a7eb08d, type: 3}
-    - {fileID: 8300000, guid: cdb73fa48648978439137a271d97da0e, type: 3}
-    - {fileID: 8300000, guid: c8d77042190d1b34f9bde0660a7ba1f6, type: 3}
-    - {fileID: 8300000, guid: c9678a59fd40d6f43975fc328b59793b, type: 3}
-    - {fileID: 8300000, guid: 6a73913e90c19c24590d1cb26f17cc04, type: 3}
-    - {fileID: 8300000, guid: 6ddbc2b093e629a42b7fd4f259b9c09e, type: 3}
-    - {fileID: 8300000, guid: 8d3eec2fdfaa6b746a890be73a201227, type: 3}
-    - {fileID: 8300000, guid: bd740718db281094384f97d8fa1497cd, type: 3}
-    - {fileID: 8300000, guid: 4cf4ba17d9998844185dca02d6240c8c, type: 3}
     - {fileID: 8300000, guid: e5a81408349c60746b1f56a97583e5d6, type: 3}
-    - {fileID: 8300000, guid: 8f14a0252c2070a40924aa06b323b810, type: 3}
-    - {fileID: 8300000, guid: 24530412d6bc8b345838dbd1a63eb998, type: 3}
-    - {fileID: 8300000, guid: 2cc51ac79c3b10c49909c55e020db57a, type: 3}
-    - {fileID: 8300000, guid: 73226e92c20a26345a289e423f554f38, type: 3}
-    - {fileID: 8300000, guid: 86c4f767744b44740845149a0c60efce, type: 3}
-    - {fileID: 8300000, guid: 4277a99c7b0ea3f4a98a0cd4d2fe6ba5, type: 3}
-    - {fileID: 8300000, guid: 2cf9ee504fb5f1c4da68ffa94b4f0fa3, type: 3}
-    - {fileID: 8300000, guid: 3d2eb48133f3a284896c2126183674a1, type: 3}
-    - {fileID: 8300000, guid: e08cf8dc4ee3cc340abd4ef5dca02086, type: 3}
-    - {fileID: 8300000, guid: 74eda371b444f1b49a3754e639bfb9a8, type: 3}
-    - {fileID: 8300000, guid: 18f2f70f82266804594f5f7212aa8b92, type: 3}
-  - name: PushingCrate
-    audioClips: []
-  - name: SplashSound
-    audioClips: []
 --- !u!82 &1853941230
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7519,7 +7474,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.017
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
