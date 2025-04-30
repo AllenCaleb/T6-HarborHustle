@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager Instance; // Singleton reference
     public event Action OnInventoryUpdated;
 
     private List<Sprite> collectedItems = new List<Sprite>();
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Keep across scenes
-            Debug.Log("InventoryManager Instance is set.");
-        }
-        else
-        {
-            Debug.LogWarning("Duplicate InventoryManager found! Destroying this one.");
-            Destroy(gameObject);
-        }
+        // Optional: log to ensure InventoryManager is initialized
+        Debug.Log("InventoryManager initialized for this scene.");
     }
 
     public void AddItem(Sprite itemSprite)
@@ -33,6 +23,7 @@ public class InventoryManager : MonoBehaviour
             OnInventoryUpdated?.Invoke();
         }
     }
+
     public void RemoveItem(Sprite itemSprite)
     {
         if (collectedItems.Contains(itemSprite))
@@ -46,7 +37,6 @@ public class InventoryManager : MonoBehaviour
             Debug.LogWarning("Attempted to remove item that isn't in inventory: " + itemSprite.name);
         }
     }
-
 
     public List<Sprite> GetCollectedItems()
     {

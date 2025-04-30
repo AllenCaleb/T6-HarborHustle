@@ -4,52 +4,44 @@ using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
+    [Header("UI Elements")]
+    public GameObject inventoryPanel;
+    public Image[] itemImages;
 
-    public GameObject inventoryPanel; 
-    public Image[] itemImages;  
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    [Header("Required Managers")]
+    [SerializeField] private InventoryManager inventoryManager;
 
     private void OnEnable()
     {
-        if (InventoryManager.Instance == null)
+        if (inventoryManager == null)
         {
-            Debug.LogError("InventoryManager Instance is NULL in UIManager! Make sure it's in the scene.");
+            Debug.LogError("InventoryManager is NULL in UIManager! Make sure it's assigned.");
             return;
         }
 
         Debug.Log("Subscribing to OnInventoryUpdated.");
-        InventoryManager.Instance.OnInventoryUpdated += UpdateUI;
+        inventoryManager.OnInventoryUpdated += UpdateUI;
     }
-
 
     private void OnDisable()
     {
-        InventoryManager.Instance.OnInventoryUpdated -= UpdateUI; 
+        if (inventoryManager != null)
+        {
+            inventoryManager.OnInventoryUpdated -= UpdateUI;
+        }
     }
 
     public void UpdateUI()
     {
         Debug.Log("UpdateUI called!");
 
-        if (InventoryManager.Instance == null)
+        if (inventoryManager == null)
         {
             Debug.LogError("InventoryManager is NULL in UIManager!");
             return;
         }
 
-        List<Sprite> items = InventoryManager.Instance.GetCollectedItems();
+        List<Sprite> items = inventoryManager.GetCollectedItems();
         Debug.Log("Updating UI. Items in inventory: " + items.Count);
 
         for (int i = 0; i < itemImages.Length; i++)
@@ -69,8 +61,4 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
-
-
-
 }
