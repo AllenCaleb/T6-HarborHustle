@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class NPCInteraction : MonoBehaviour
 {
@@ -18,9 +17,18 @@ public class NPCInteraction : MonoBehaviour
     public GameObject itemToReveal;
     public string revealKey = "FishermanFailItemRevealed"; // Unique key for this item
 
+    [Header("Required Managers")]
+    [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private ObjectiveManager objectiveManager;
+
     void Start()
     {
-        // Check if the item should already be revealed when the scene loads
+        if (inventoryManager == null)
+            Debug.LogWarning("InventoryManager not assigned in Inspector.");
+        if (objectiveManager == null)
+            Debug.LogWarning("ObjectiveManager not assigned in Inspector.");
+
+        // Reveal saved item if needed
         if (!string.IsNullOrEmpty(revealKey) && PlayerPrefs.GetInt(revealKey, 0) == 1)
         {
             if (itemToReveal != null)
@@ -34,35 +42,30 @@ public class NPCInteraction : MonoBehaviour
         {
             if (dialogueScript != null)
             {
-                if (InventoryManager.Instance.HasItem(requiredItem))
+                if (inventoryManager != null && inventoryManager.HasItem(requiredItem))
                 {
-                    // Remove the required item from the inventory
-                    InventoryManager.Instance.RemoveItem(requiredItem);
-
-                    // Start the success dialogue
+                    inventoryManager.RemoveItem(requiredItem);
                     dialogueScript.StartDialogue(successMessage);
-
-                    // Remove the objective after it's completed
-                    ObjectiveManager.Instance.RemoveObjective(objectiveMessage);
+                    if (objectiveManager != null)
+                        objectiveManager.RemoveObjective(objectiveMessage);
                 }
                 else
                 {
-                    // Start the fail dialogue
                     dialogueScript.StartDialogue(failMessage);
 
-                    // Only reveal the item once
                     if (itemToReveal != null && PlayerPrefs.GetInt(revealKey, 0) == 0)
                     {
                         itemToReveal.SetActive(true);
-                        PlayerPrefs.SetInt(revealKey, 1); // Save that the item was revealed
-                        PlayerPrefs.Save(); // Ensure it's written to disk
+                        PlayerPrefs.SetInt(revealKey, 1);
+                        PlayerPrefs.Save();
                     }
                 }
 
-                // Add the objective if it hasn't been added already
                 if (!objectiveGiven && !string.IsNullOrEmpty(objectiveMessage))
                 {
-                    ObjectiveManager.Instance.AddObjective(objectiveMessage);
+                    if (objectiveManager != null)
+                        objectiveManager.AddObjective(objectiveMessage);
+
                     objectiveGiven = true;
                 }
             }

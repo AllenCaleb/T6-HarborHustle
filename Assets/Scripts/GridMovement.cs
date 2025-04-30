@@ -10,23 +10,28 @@ public class GridMovement : MonoBehaviour
 
     public LayerMask whatStopsMovement;
 
+    [Header("Required Managers")]
+    [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private UIManager uiManager;
+
     private void Awake()
     {
         inventory = new Inventory();  // Initialize the inventory here
+
+        // Ensure the managers are set up correctly
+        if (inventoryManager == null)
+            Debug.LogError("InventoryManager is not assigned in GridMovement.");
+        if (uiManager == null)
+            Debug.LogError("UIManager is not assigned in GridMovement.");
     }
 
     void Start()
     {
         movePoint.parent = null;
 
-        if (inventory == null)
-        {
-            Debug.LogError("Inventory is NULL in GridMovement at Start!");
-            return;
-        }
-
-        // Set inventory in UIManager for initial UI setup
-        UIManager.Instance.UpdateUI();
+        // Optionally: Initialize UI
+        if (uiManager != null)
+            uiManager.UpdateUI();
     }
 
     void Update()
@@ -54,16 +59,17 @@ public class GridMovement : MonoBehaviour
 
     public void AddItemToInventory(Sprite itemSprite)
     {
-        if (inventory == null)
+        if (inventoryManager == null)
         {
-            Debug.LogError("Inventory is NULL in GridMovement!");
+            Debug.LogError("InventoryManager is NULL in GridMovement!");
             return;
         }
 
         // Add item to the inventory via InventoryManager
-        InventoryManager.Instance.AddItem(itemSprite);  // Update InventoryManager
+        inventoryManager.AddItem(itemSprite);  // Update InventoryManager
 
         // Optionally, update UI immediately
-        UIManager.Instance.UpdateUI();  // Refresh the UI to reflect the new item
+        if (uiManager != null)
+            uiManager.UpdateUI();  // Refresh the UI to reflect the new item
     }
 }
