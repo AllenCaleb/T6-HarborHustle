@@ -4173,6 +4173,7 @@ MonoBehaviour:
   - {fileID: 1956583204}
   - {fileID: 1456281712}
   - {fileID: 898802946}
+  inventoryManager: {fileID: 0}
 --- !u!4 &430622828
 Transform:
   m_ObjectHideFlags: 0
@@ -74392,9 +74393,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9219744061962459970, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 430622827}
+    - target: {fileID: 9219744061962459970, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
       propertyPath: UI_Inventory
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9219744061962459970, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 8113883}
     m_RemovedComponents:
     - {fileID: 8503084215206953261, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
     - {fileID: 3805084114111698204, guid: 6b6bd1b349f743a42a237a144cd438c1, type: 3}
