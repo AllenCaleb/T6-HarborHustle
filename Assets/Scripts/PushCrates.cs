@@ -16,10 +16,12 @@ public class PushCrates : MonoBehaviour
 
     private GameObject crate;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,8 @@ public class PushCrates : MonoBehaviour
 
         if ((hitUp.collider != null || hitDown.collider != null || hitLeft.collider != null || hitRight.collider != null) && Input.GetKey(KeyCode.P))
         {
+            animator.SetBool("IsPushing", true);
+
             GameObject hitObject = null;
             Vector2 selectedOffset = Vector2.zero;
 
@@ -89,6 +93,7 @@ public class PushCrates : MonoBehaviour
         }
         else if (crate != null && Input.GetKeyUp(KeyCode.P))
         {
+            animator.SetBool("IsPushing", false);
             var joint = crate.GetComponent<FixedJoint2D>();
             if (joint != null)
             {
@@ -109,5 +114,8 @@ public class PushCrates : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
+        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.left * transform.localScale.x * distance);
+        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.up * transform.localScale.x * distance);
+        Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.down * transform.localScale.x * distance);
     }
 }
