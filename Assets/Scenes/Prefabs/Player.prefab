@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 6993602770928389263}
   - component: {fileID: 5317397699213670783}
   - component: {fileID: 9161108631925836510}
-  - component: {fileID: 3805084114111698204}
   - component: {fileID: 1948286569019600714}
   - component: {fileID: 5155314570952759215}
   - component: {fileID: 3516841220880717998}
@@ -271,19 +270,6 @@ MonoBehaviour:
   player: {fileID: 5905415437755048023}
   offset: {x: 0, y: 0, z: 0}
   smoothSpeed: 0.125
---- !u!114 &3805084114111698204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218914864288610879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26561d90c36c18847a7ba0390db32c74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Inventory: {fileID: 0}
 --- !u!114 &1948286569019600714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,6 +429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b32f25f8d0b91449c185312773328a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
+  uiManager: {fileID: 0}
   moveSpeed: 5
   detectionRadius: 1
   footstepSpeed: 0.5
