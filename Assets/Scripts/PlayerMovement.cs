@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
+
 public class PlayerMovement : MonoBehaviour
 {
+    public Inventory inventory;
+    [Header("Required Managers")]
+    [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private UIManager uiManager;
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -22,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        // Optionally: Initialize UI
+        if (uiManager != null)
+            uiManager.UpdateUI();
     }
 
     void Update()
@@ -109,5 +120,36 @@ public class PlayerMovement : MonoBehaviour
         SoundEffectManager.Play("Footstep");
     }
 
+    
 
+    
+
+    private void Awake()
+    {
+        inventory = new Inventory();  // Initialize the inventory here
+
+        // Ensure the managers are set up correctly
+        if (inventoryManager == null)
+            Debug.LogError("InventoryManager is not assigned in GridMovement.");
+        if (uiManager == null)
+            Debug.LogError("UIManager is not assigned in GridMovement.");
+    }
+
+
+
+    public void AddItemToInventory(Sprite itemSprite)
+    {
+        if (inventoryManager == null)
+        {
+            Debug.LogError("InventoryManager is NULL in GridMovement!");
+            return;
+        }
+
+        // Add item to the inventory via InventoryManager
+        inventoryManager.AddItem(itemSprite);  // Update InventoryManager
+
+        // Optionally, update UI immediately
+        if (uiManager != null)
+            uiManager.UpdateUI();  // Refresh the UI to reflect the new item
+    }
 }
