@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+
+        Time.timeScale = 1;
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -37,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+       
         if (moveInput.x != 0 && moveInput.y != 0)
         {
             if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))

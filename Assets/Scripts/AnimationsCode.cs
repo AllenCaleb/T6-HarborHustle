@@ -32,7 +32,7 @@ public class SpriteMover : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (isNearCrate && Input.GetKeyDown(KeyCode.W))
+       /* if (isNearCrate && Input.GetKeyDown(KeyCode.W))
         {
 
             animator.SetBool("IsPushingUp", true);
@@ -149,6 +149,7 @@ public class SpriteMover : MonoBehaviour
                 }
             }
         }
+        */
 
         void StartFootsteps()
         {

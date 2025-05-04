@@ -6765,6 +6765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b32f25f8d0b91449c185312773328a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
+  uiManager: {fileID: 0}
   moveSpeed: 5
   detectionRadius: 1
   footstepSpeed: 0.5
@@ -7447,7 +7449,7 @@ FixedJoint2D:
   m_GameObject: {fileID: 1845849523}
   m_Enabled: 0
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1260889429}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity

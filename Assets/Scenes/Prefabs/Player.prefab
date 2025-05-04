@@ -44,11 +44,8 @@ GameObject:
   - component: {fileID: 2349460093004043293}
   - component: {fileID: 3642242869686608999}
   - component: {fileID: 8193383090329038862}
-  - component: {fileID: 6993602770928389263}
   - component: {fileID: 5317397699213670783}
   - component: {fileID: 9161108631925836510}
-  - component: {fileID: 1948286569019600714}
-  - component: {fileID: 5155314570952759215}
   - component: {fileID: 3516841220880717998}
   - component: {fileID: 442773092046293378}
   - component: {fileID: 4695803586589533784}
@@ -214,26 +211,6 @@ MonoBehaviour:
   totalCollectibles: 0
   EndPoint: {fileID: 0}
   GameEndUi: {fileID: 0}
---- !u!114 &6993602770928389263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218914864288610879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ec23c8563acb44ea8103fc0169c8b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  movePoint: {fileID: 0}
-  whatStopsMovement:
-    serializedVersion: 2
-    m_Bits: 0
-  detectionRadius: 1
-  footstepSpeed: 0.5
-  animator: {fileID: 5317397699213670783}
 --- !u!95 &5317397699213670783
 Animator:
   serializedVersion: 5
@@ -270,38 +247,6 @@ MonoBehaviour:
   player: {fileID: 5905415437755048023}
   offset: {x: 0, y: 0, z: 0}
   smoothSpeed: 0.125
---- !u!114 &1948286569019600714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218914864288610879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2b3121f1efd134182649ebabba8bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  Health: 0
-  isDead: 0
-  gameOverManager: {fileID: 0}
---- !u!114 &5155314570952759215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218914864288610879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2b3121f1efd134182649ebabba8bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  Health: 0
-  isDead: 0
-  gameOverManager: {fileID: 0}
 --- !u!114 &3516841220880717998
 MonoBehaviour:
   m_ObjectHideFlags: 0
