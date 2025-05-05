@@ -105,5 +105,8 @@ public class PlayerPush : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
+        Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * transform.localScale.x * distance);
+        Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.up * transform.localScale.x * distance);
+        Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.down * transform.localScale.x * distance);
     }
 }
