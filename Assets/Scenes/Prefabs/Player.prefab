@@ -49,7 +49,6 @@ GameObject:
   - component: {fileID: 3516841220880717998}
   - component: {fileID: 442773092046293378}
   - component: {fileID: 4695803586589533784}
-  - component: {fileID: 8982657817717504624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -113,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 685600373, guid: 3b1b1280d444fc5449759a5acefbb946, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -184,7 +183,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019837618, y: -0.25213432}
+  m_Offset: {x: 0.00067687035, y: -0.2060728}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -195,7 +194,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5780253, y: 2.4226494}
+  m_Size: {x: 1.065167, y: 1.9109669}
   m_EdgeRadius: 0
 --- !u!114 &8193383090329038862
 MonoBehaviour:
@@ -380,23 +379,3 @@ MonoBehaviour:
   moveSpeed: 5
   detectionRadius: 1
   footstepSpeed: 0.5
---- !u!114 &8982657817717504624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218914864288610879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b834b20dc51881f42861f9f5944c7dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 1
-  boxMask:
-    serializedVersion: 2
-    m_Bits: 439
-  offsetRight: {x: 1, y: 0}
-  offsetLeft: {x: -1, y: 0}
-  offsetUp: {x: 0, y: 1}
-  offsetDown: {x: 0, y: -1}
