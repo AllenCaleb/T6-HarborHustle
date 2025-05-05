@@ -49,36 +49,37 @@ public class PushCrates : MonoBehaviour
             crate.GetComponent<cratepull>().enabled = false;
         }*/
 
-        if ((hitUp.collider != null || hitDown.collider != null || hitLeft.collider != null || hitRight.collider != null) && Input.GetKey(KeyCode.P))
+        if ((hitUp.collider != null || hitDown.collider != null || hitLeft.collider != null || hitRight.collider != null) &&  Input.GetKeyDown(KeyCode.P))
         {
-            animator.SetBool("IsPushing", true);
 
             GameObject hitObject = null;
             Vector2 selectedOffset = Vector2.zero;
 
-            if (hitUp.collider != null)
+            if (hitUp.collider != null && hitUp.collider.CompareTag("Crate"))
             {
                 hitObject = hitUp.collider.gameObject;
                 selectedOffset = offsetUp;
             }
-            else if (hitDown.collider != null)
+            else if (hitDown.collider != null && hitDown.collider.CompareTag("Crate"))
             {
                 hitObject= hitDown.collider.gameObject;
                 selectedOffset = offsetDown;
             }
-            else if (hitLeft.collider != null)
+            else if (hitLeft.collider != null && hitLeft.collider.CompareTag("Crate"))
             {
                 hitObject = hitLeft.collider.gameObject;
                 selectedOffset = offsetLeft;
             }
-            else if (hitRight.collider != null)
+            else if (hitRight.collider != null && hitRight.collider.CompareTag("Crate"))
             {
                 hitObject = hitRight.collider.gameObject;
                 selectedOffset = offsetRight;
             }
 
-            if (hitObject != null && hitObject.CompareTag("Crate"))
+            if (hitObject != null)
             {
+                animator.SetBool("IsPushing", true);
+
                 crate = hitObject;
                 var joint = crate.GetComponent<FixedJoint2D>();
                 if (joint == null)

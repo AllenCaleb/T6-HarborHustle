@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         
         rb.velocity = moveInput * moveSpeed;
+       
         /*if(rb.velocity.magnitude > 0 && !playingFootsteps)
         {
             StartFootsteps();
@@ -104,6 +105,8 @@ public class PlayerMovement : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
         animator.SetFloat("InputX", moveInput.x);
         animator.SetFloat("InputY", moveInput.y);
+
+       
     }
 
     void StartFootsteps()
@@ -133,9 +136,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Ensure the managers are set up correctly
         if (inventoryManager == null)
-            Debug.LogError("InventoryManager is not assigned in GridMovement.");
+            Debug.LogError("InventoryManager is not assigned in PlayerMovement.");
         if (uiManager == null)
-            Debug.LogError("UIManager is not assigned in GridMovement.");
+            Debug.LogError("UIManager is not assigned in PlayerMovement.");
     }
 
 

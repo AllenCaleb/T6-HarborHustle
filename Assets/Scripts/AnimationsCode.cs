@@ -151,7 +151,7 @@ public class SpriteMover : MonoBehaviour
         }
         */
 
-        void StartFootsteps()
+        /*void StartFootsteps()
         {
             playingFootsteps = true;
             InvokeRepeating(nameof(PlayFootstep), 0f, footstepSpeed);
@@ -167,5 +167,6 @@ public class SpriteMover : MonoBehaviour
         {
             SoundEffectManager.Play("Footstep");
         }
+        */
     }
 }
