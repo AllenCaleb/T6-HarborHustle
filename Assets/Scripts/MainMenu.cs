@@ -20,4 +20,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Controls");
     }
 
+  public void SkipTutorial()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
+
 }
