@@ -20,15 +20,15 @@ public class EndGameManager : MonoBehaviour
             Debug.Log("Player has entered the trigger!");
 
             // Get GridMovement component from player
-            GridMovement gridMovement = other.gameObject.GetComponent<GridMovement>();
-            if (gridMovement == null)
+            PlayerMovement PlayerMovement = other.gameObject.GetComponent<PlayerMovement>();
+            if (PlayerMovement == null)
             {
-                Debug.LogError("GridMovement not found on Player object!");
+                Debug.LogError("PlayerMovement not found on Player object!");
                 return;
             }
 
             // Check if inventory is null or empty
-            if (gridMovement.inventory == null || gridMovement.inventory.GetItems().Count == 0)
+            if (PlayerMovement.inventory == null || PlayerMovement.inventory.GetItems().Count == 0)
             {
                 Debug.Log("Player inventory is empty! Triggering Game Over.");
                 GameOver();
@@ -37,7 +37,7 @@ public class EndGameManager : MonoBehaviour
             {
                 // If inventory is not empty, log the items in inventory
                 Debug.Log("Player's inventory is not empty.");
-                List<Item> inventoryItems = gridMovement.inventory.GetItems();
+                List<Item> inventoryItems = PlayerMovement.inventory.GetItems();
                 foreach (var item in inventoryItems)
                 {
                     Debug.Log($"Item in inventory: {item.itemType}");
