@@ -6297,6 +6297,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 465356560}
+  - {fileID: 1817141270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995655013
@@ -6338,7 +6339,7 @@ MonoBehaviour:
   - {fileID: 1228279205}
   - {fileID: 1558288423}
   - {fileID: 1956068292}
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 1903750996}
 --- !u!4 &995655015
 Transform:
   m_ObjectHideFlags: 0
@@ -91629,6 +91630,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773018093}
   m_CullTransparentMesh: 1
+--- !u!1 &1817141269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817141270}
+  - component: {fileID: 1817141271}
+  m_Layer: 0
+  m_Name: Objective Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817141270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817141269}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -217.09245, y: 25.922497, z: 11.117935}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 991926401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817141271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817141269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5acaf67d451564abf835b745693d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectivePanel: {fileID: 465356557}
+  objectiveText: {fileID: 1753412603}
 --- !u!1 &1832156710
 GameObject:
   m_ObjectHideFlags: 0
@@ -102325,6 +102372,14 @@ PrefabInstance:
         the rest of the crew below deck towards the bow and we'll get the ol' girl
         homeward bound. "
       objectReference: {fileID: 0}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1903750996}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 1817141271}
     - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
       propertyPath: objectiveMessage
       value: Collect the Documents
