@@ -3971,7 +3971,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrateObject
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 2.0571158
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 14.681877
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4924,7 +4933,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrateObject (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 4.9185123
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 2.6643534
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -80120,7 +80138,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -1.0355325
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 15.031297
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -80685,7 +80712,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrateObject (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -102064,7 +102100,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrateObject
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 7.99686
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9195442553677813220, guid: 335d1b6784bf5ec4ba6c226f7c81fcce, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -102325,6 +102370,14 @@ PrefabInstance:
         the rest of the crew below deck towards the bow and we'll get the ol' girl
         homeward bound. "
       objectReference: {fileID: 0}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1903750996}
+    - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 995655017}
     - target: {fileID: 1650645470266899414, guid: fd14ef2c65923144b81701396bd0f03f, type: 3}
       propertyPath: objectiveMessage
       value: Collect the Documents
