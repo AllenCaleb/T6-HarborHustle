@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorSceneTransition : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName = "Level2"; 
+    [SerializeField] private string nextSceneName = "Level 2"; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
