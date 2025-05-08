@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SoundEffectManager : MonoBehaviour
 {
     private static SoundEffectManager Instance;
 
-    private static AudioSource audioSource;
-    private static SoundEffectLibrary soundEffectLibrary;
     [SerializeField] private Slider sfxSlider;
+    [SerializeField] private AudioMixer audioMixer; // Drag your MainAudioMixer here
+    private AudioSource audioSource;
+    private SoundEffectLibrary soundEffectLibrary;
 
     private void Awake()
     {
@@ -24,30 +24,34 @@ public class SoundEffectManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
-     public static void Play(string soundName)
+
+    private void Start()
     {
-        AudioClip audioClip = soundEffectLibrary.GetRandomClip(soundName);
-        if (audioClip != null)
+        float savedVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        sfxSlider.value = savedVolume;
+        SetVolume(savedVolume);
+        sfxSlider.onValueChanged.AddListener(SetVolume);
+    }
+
+    public static void Play(string soundName)
+    {
+        if (Instance == null) return;
+
+        AudioClip clip = Instance.soundEffectLibrary.GetRandomClip(soundName);
+        if (clip != null && Instance.audioSource != null)
         {
-            audioSource.PlayOneShot(audioClip);
+            Instance.audioSource.PlayOneShot(clip);
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetVolume(float volume)
     {
-        sfxSlider.onValueChanged.AddListener(delegate { OnValuechanged(); });
-    }
-
-    public static void SetVolume(float volume)
-    {
-        audioSource.volume = volume;
-    }
-
-    public void OnValuechanged()
-    {
-        SetVolume(sfxSlider.value);
+        if (audioMixer != null)
+        {
+            // Convert linear volume (0.0001 to 1.0) to decibels (-80 to 0)
+            audioMixer.SetFloat("SFXVolume", Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1f)) * 20);
+            PlayerPrefs.SetFloat("SFXVolume", volume);
+        }
     }
 }
